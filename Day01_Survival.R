@@ -1,4 +1,4 @@
-ESTUDIO DE CASO tt-alone-survivalists
+#ESTUDIO DE CASO tt-alone-survivalists
 
 library(tidyverse)
 library(ggbeeswarm)
