@@ -7,6 +7,9 @@ library(glue)
 library(sysfonts)
 library(showtext)
 library(ggrepel)
+library(ggtext)
+
+
 
 #importar fonts
 
@@ -76,8 +79,9 @@ subtitle = "Analysis of survivalists competing on the US reality TV series, **Al
 
 #use custom social caption function to generate html for plot caption (used with ggtext)
 caption = paste0("Source: {alone}<br>",
-                 social_caption(font_family="rs", font_color="black", icon_color="#2B4162",linkedin="shapirotanya", mastodon="fosstodon/tanya_shapiro"))
+                 social_caption(font_family="rs", font_color="black", icon_color="#2B4162",linkedin="yusnelkis"))
 
+#Create chart
 ggplot(data=survivalists)+
   geom_point(mapping=aes(y=days_lasted, x=gender, fill=status), 
              color="white", shape=21,
