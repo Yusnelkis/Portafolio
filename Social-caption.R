@@ -2,8 +2,7 @@
 
 social_caption<-function(twitter="@Milanes_guisado",
                          github = "Yusnelkis",
-                         linkedin=NA,
-                         mastodon=NA,
+                         linkedin="yusnelkis",
                          icon_color="black",
                          font_color="black",
                          bg_color="white",
@@ -12,11 +11,10 @@ social_caption<-function(twitter="@Milanes_guisado",
   icons = list(
     twitter = "&#xf099",
     github = "&#xf09b",
-    linkedin = "&#xf08c",
-    mastodon = "&#xf4f6"
-  )  
+    linkedin = "&#xf08c"
+    )  
   
-  social = list(twitter =twitter, github =github, linkedin =linkedin, mastodon =mastodon)
+  social = list(twitter =twitter, github =github, linkedin =linkedin)
   social = social[!is.na(social)]
   
   caption = ""

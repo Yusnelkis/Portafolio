@@ -20,35 +20,6 @@ sysfonts::font_add('Font Awesome 6 Brands', 'fonts/Font Awesome 6 Brands-Regular
 
 #Crear codigo para social caption
 source("social-caption.R")
-social_caption<-function(twitter="@Milanes_guisado",
-                         github = "Yusnelkis",
-                         linkedin=NA,
-                         mastodon=NA,
-                         icon_color="black",
-                         font_color="black",
-                         bg_color="white",
-                         font_family="Roboto"){
-  
-  icons = list(
-    twitter = "&#xf099",
-    github = "&#xf09b",
-    linkedin = "&#xf08c",
-    mastodon = "&#xf4f6"
-  )  
-  
-  social = list(twitter =twitter, github =github, linkedin =linkedin, mastodon =mastodon)
-  social = social[!is.na(social)]
-  
-  caption = ""
-  for (name in names(social)){
-    icon = icons[name]
-    info = social[name]
-    html = glue("<span style='font-family:\"Font Awesome 6 Brands\";color:{icon_color};'>{icon};</span><span style='color:{bg_color};'>.</span><span style='font-family:{font_family};color:{font_color};'>{info}</span><span style='color:{bg_color};'>..</span>")
-    caption = paste0(caption,html)
-  }
-  
-  caption
-}
 
 #import data
 survivalists <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-24/survivalists.csv')
@@ -75,11 +46,10 @@ summary = survivalists|>
 summary
 
 #create plot subtitle + caption
-subtitle = "Analysis of survivalists competing on the US reality TV series, **Alone**, across all seasons (1-9). Comparison of days lasted by gender. Although the show has yet to crown a female winner, on average as a group, female survivalists last 13 days longer than male competitors."
+subtitle = "Analysis of survivalists competing on the US reality TV series, **Alone**, across all seasons (1-9)." 
 
 #use custom social caption function to generate html for plot caption (used with ggtext)
-caption = paste0("Source: {alone}<br>",
-                 social_caption(font_family="rs", font_color="black", icon_color="#2B4162",linkedin="yusnelkis"))
+caption = paste0(social_caption(font_family="rs", font_color="black", icon_color="#2B4162",linkedin="yusnelkis"))
 
 #Create chart
 ggplot(data=survivalists)+
@@ -91,14 +61,15 @@ ggplot(data=survivalists)+
                                label = glue("Avg: {round(mean(survivalists$days_lasted),0)} Days"), 
                                hjust = 0.05, vjust=-0.5, family='rs',
                                size=3)+
-  geom_point(data=summary, mapping=aes(x=gender, y=avg_days_lasted), size=4.5, shape=23, fill="black", color="white")+
+  geom_point(data=summary, mapping=aes(x=gender, y=avg_days_lasted), size=4.5
+             , shape=23, fill="black", color="white")+
   scale_fill_manual(values=rev(c("#FBB13C","#41B7C4","#E2F4B4","#2B4162")))+
   scale_x_discrete(labels=c("**Female**(n=20)","**Male**(n=74)"))+
   coord_flip()+
   annotate(geom="text", x="Male", y=100, vjust=2, label="Roland\nWelker", family="rs", color="grey50", size=2)+
   annotate(geom="text", x="Female", y=89, vjust=-1.5, label="Callie\nRussell", family="rs", color="grey50", size=2)+
-  annotate(geom="text", x=2.3, y=31, label="Male Avg\n36.2 Days", family="rs", size=2)+
-  annotate(geom="text", x=1.28, y=49.5, label="Female Avg\n49.5 Days", family="rs", size=2)+
+  annotate(geom="text", x=1.3, y=25, label="Male Avg\n36.2 Days", family="rs", size=1.5)+
+  annotate(geom="text", x=1.3, y=30, label="Female Avg\n49.5 Days", family="rs", size=1.5)+
   geom_segment(mapping=aes(y=49.5, yend=49.5, x=1.2, xend=1), linewidth=0.15)+
   geom_segment(mapping=aes(y=31, yend=36.2, x=2.22, xend=2), linewidth=0.15)+
   labs(
@@ -116,8 +87,8 @@ ggplot(data=survivalists)+
         axis.text.y=ggtext::element_markdown(hjust=0),
         axis.line.x = element_line(linewidth=0.5, color="black"),
         panel.background = element_blank(),
-        plot.title = element_textbox_simple(face="bold", size=15, margin = margin(b=10, t=10), width = grid::unit(6.75, "in"), halign=0, hjust=0.15),
-        plot.subtitle = element_textbox_simple( width = grid::unit(6.75, "in"), halign=0, hjust=0.15),
+        plot.title = element_textbox_simple(face="bold", size=2, margin = margin(b=2, t=2), width = grid::unit(4, "in"), halign=0, hjust=0.7),
+        plot.subtitle = element_textbox_simple( width = grid::unit(4, "in"), halign=0, hjust=0.8),
         plot.caption = element_textbox_simple(color="black"),
         panel.grid = element_blank(), 
         panel.grid.major.x = element_line(linewidth=0.2, color='grey90'),
