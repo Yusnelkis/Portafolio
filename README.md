@@ -1,5 +1,7 @@
 # Proyectos retos 
 
+He comenzado a realizar distintos tipos de gráficos con datos en abierto y otros de interés, con el fin de resolver a determinadas preguntas de interés a partir de los datos, prácticar con modelos visuales avanzados o simplemente porque aprendo siempre y me divierto. 
+
 # Survivalschart_week01
 
 Fuente de inspiración:  
