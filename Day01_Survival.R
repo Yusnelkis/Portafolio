@@ -46,7 +46,7 @@ summary = survivalists|>
 summary
 
 #create plot subtitle + caption
-subtitle = "Analysis of survivalists competing on the US reality TV series, **Alone**, across all seasons (1-9)." 
+subtitle = "Analysis of survivalists competing on the US reality TV series, **Alone**, across all seasons (1-9). Comparison of days lasted by gender."
 
 #use custom social caption function to generate html for plot caption (used with ggtext)
 caption = paste0(social_caption(font_family="rs", font_color="black", icon_color="#2B4162",linkedin="yusnelkis"))
@@ -64,12 +64,12 @@ ggplot(data=survivalists)+
   geom_point(data=summary, mapping=aes(x=gender, y=avg_days_lasted), size=4.5
              , shape=23, fill="black", color="white")+
   scale_fill_manual(values=rev(c("#FBB13C","#41B7C4","#E2F4B4","#2B4162")))+
-  scale_x_discrete(labels=c("**Female**(n=20)","**Male**(n=74)"))+
+  scale_x_discrete(labels=c("**Female**<br>(n=20)","**Male**<br>(n=74)"))+
   coord_flip()+
   annotate(geom="text", x="Male", y=100, vjust=2, label="Roland\nWelker", family="rs", color="grey50", size=2)+
   annotate(geom="text", x="Female", y=89, vjust=-1.5, label="Callie\nRussell", family="rs", color="grey50", size=2)+
-  annotate(geom="text", x=1.3, y=25, label="Male Avg\n36.2 Days", family="rs", size=1.5)+
-  annotate(geom="text", x=1.3, y=30, label="Female Avg\n49.5 Days", family="rs", size=1.5)+
+  annotate(geom="text", x=2.3, y=31, label="Male Avg\n36.2 Days", family="rs", size=2)+
+  annotate(geom="text", x=1.28, y=49.5, label="Female Avg\n49.5 Days", family="rs", size=2)+
   geom_segment(mapping=aes(y=49.5, yend=49.5, x=1.2, xend=1), linewidth=0.15)+
   geom_segment(mapping=aes(y=31, yend=36.2, x=2.22, xend=2), linewidth=0.15)+
   labs(
@@ -87,12 +87,12 @@ ggplot(data=survivalists)+
         axis.text.y=ggtext::element_markdown(hjust=0),
         axis.line.x = element_line(linewidth=0.5, color="black"),
         panel.background = element_blank(),
-        plot.title = element_textbox_simple(face="bold", size=2, margin = margin(b=2, t=2), width = grid::unit(4, "in"), halign=0, hjust=0.7),
-        plot.subtitle = element_textbox_simple( width = grid::unit(4, "in"), halign=0, hjust=0.8),
+        plot.title = element_textbox_simple(face="bold", size=15, margin = margin(b=6, t=10), width = grid::unit(6.75, "in"), halign=0, hjust=0.15),
+        plot.subtitle = element_textbox_simple( width = grid::unit(6, "in"), halign=1, hjust=1.0),
         plot.caption = element_textbox_simple(color="black"),
         panel.grid = element_blank(), 
         panel.grid.major.x = element_line(linewidth=0.2, color='grey90'),
         legend.key = element_blank())
 
 
-ggsave("alone-survivalists.png", bg="white", height=6, width=8)
+ggsave("survivalists_week01.png", bg="white", height=6, width=10)
