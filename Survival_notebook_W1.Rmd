@@ -19,7 +19,7 @@ showtext::showtext_auto()
 showtext_opts(dpi=300)
 sysfonts::font_add('Font Awesome 6 Brands', 'fonts/Font Awesome 6 Brands-Regular-400.otf')
 
-#Crear codigo para social caption (Fuente: https://github.com/tashapiro/TidyTuesday/tree/master/2023/W4)
+#social caption (Fuente: https://github.com/tashapiro/TidyTuesday/tree/master/2023/W4)
 source("social-caption.R")
 
 #import data
