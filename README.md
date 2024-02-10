@@ -12,6 +12,10 @@ Github de Tanya Shapiro [tashapiro](https://github.com/tashapiro/TidyTuesday/com
 
 # Pablo de Olavide Univeristy at Macro citation reports_ chart02
 
+Con esta visualización, además de querer testar el nuevo el nuevo modelo visual de Datawrraper (small multiples lines), quería realizar una primera mirada al comportamiento y perfil de citación de la Universidad Pablo de Olavide en los Macro citation reports de Incites. 
+
+Puedes acceder a la visualziación interactiva en: https://www.datawrapper.de/_/j0J9c
+
 ![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
 
 
