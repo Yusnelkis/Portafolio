@@ -15,6 +15,9 @@ Github de Tanya Shapiro [tashapiro](https://github.com/tashapiro/TidyTuesday/com
 Con esta visualización, además de querer testar el nuevo el nuevo modelo visual de Datawrapper (small multiples lines), quería realizar una primera mirada al comportamiento y perfil de citación de la Universidad Pablo de Olavide en los Macro citation reports de Incites. 
 Es una primera aproximación usando los datos de Incites (Suit bibliométrica de Web of Science), durante el periodo 2010_2021. 
 
+Los Macro Citation Topics (MCT) son informes que proporcionan una visión general de los temas y áreas de investigación más destacados en un campo académico específico, basados en el análisis de las citas dentro de la literatura científica.
+Aún así esto resulta, de momento, insuficiente en tanto he utilizado una única base de datos. Es recomendable utilizar los Macro Citation Topics junto con otras fuentes de información
+
 Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_/j0J9c](https://datawrapper.dwcdn.net/j0J9c/1/)
 
 ![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
