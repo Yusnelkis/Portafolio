@@ -12,8 +12,7 @@ Github de Tanya Shapiro [tashapiro](https://github.com/tashapiro/TidyTuesday/com
 
 # Pablo de Olavide Univeristy at Macro citation reports_ chart02
 
-UPO en los Macro Citation  report/UPO_Macrocitationsreports_09022024.png
-
+![UPO_Macrocitationreports](https://github.com/Yusnelkis/Survivalschart_Day01/blob/c7fb8d2fc74077349a5fdf95572d59fcfcae5010/Imagenes/survivalists_week01.png)
 
 
 
