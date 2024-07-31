@@ -23,5 +23,13 @@ Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_
 ![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
 
 
+# Uso de barras en la visualización de datos de encuesta_ Encuesta de satisfacción en una biblioteca_chart03
+
+COn este ejemplo de visualización de datos de encuesta, se muestra el uso de las traidcionales barras como modelo visual efectivo en la visualización de datos de encuesta de satisfacción.
+Se muestran sólo algunos ejemplos. 
+
+Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_/j0J9c](https://datawrapper.dwcdn.net/j0J9c/1/)
+
+![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
 
 
