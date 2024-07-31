@@ -28,7 +28,7 @@ Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_
 COn este ejemplo de visualización de datos de encuesta, se muestra el uso de las traidcionales barras como modelo visual efectivo en la visualización de datos de encuesta de satisfacción.
 Se muestran sólo algunos ejemplos. 
 
-Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_/j0J9c](https://datawrapper.dwcdn.net/j0J9c/1/)
+Puedes acceder a la visualización interactiva en: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta](https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta))
 
 ![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
 
