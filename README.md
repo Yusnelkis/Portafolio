@@ -1,6 +1,6 @@
 # Portafolio
 
-Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría serán proyectos de Visualización de datos y/o Machine Learning, con datos en abierto y otros de interés. El fin es resolver determinadas preguntas a partir de los datos, prácticar con distintos modelos tanto visualescomo de Ml o DL y, sobre todas las cosas, continuar aprendiendo. 
+Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría serán proyectos de Visualización de datos y/o Machine Learning, con datos en abierto y otros de interés. El fin es resolver determinadas preguntas a partir de los datos, prácticar con distintos modelos tanto visuales como de Ml o DL y, sobre todas las cosas, disfritar el camino mientras aprendo.
 
 # Survivalschart_chart01
 
