@@ -28,7 +28,7 @@ Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_
 Con este ejemplo de visualización de datos de encuesta, se muestra el uso de las traidcionales barras como modelo visual efectivo en la visualización de datos de encuesta de satisfacción.
 Se muestran sólo algunos ejemplos. 
 
-Puedes acceder a la visualización interactiva en: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta](https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta))
+Puedes acceder a la visualización interactiva en: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
 
 ![Uso de barras_datos encuesta_v1](https://github.com/Yusnelkis/Portafolio/blob/main/Barras%20en%20datos%20de%20encuesta/Uso%20de%20barras_datos%20encuesta_v1.png)
 
@@ -43,7 +43,7 @@ Este proyecto de Machine Leraning, a través de la construcción y validación d
 
 Este proyecto de analítica y visualización de datos con Tableau, me permitió replicar uno de los Dashboards incluidos en el libro "The big Dashboards. 
 
-Puedes acceder a la visualización interactiva en: [[https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
+Puedes acceder a la visualización interactiva en:[https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
 
 ![Dashboard_Coursemetrics](https://github.com/Yusnelkis/Portafolio/blob/main/Dashboard_Course%20metrics/Pursemterics_Dashboard.PNG)
 
