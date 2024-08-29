@@ -35,6 +35,7 @@ Puedes acceder a la visualización interactiva en: [https://public.tableau.com/a
 
 Este proyecto de Machine Leraning, a través de la construcción y validación de un modelo de clasificación RandomeForest es resultado del trabajo final evaluado para obtener la certificación en el Programa de Inteligencia Artificial de IBB y IBMSkillUp
 
-![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
+![Matriz de confusion_Proyecto datos fraude](Proyectos_ML_RandomeForest_datosfraude/Matriz de confusion_Proyecto datos fraude.png)
+
 
 
