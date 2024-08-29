@@ -1,6 +1,6 @@
 # Portafolio
 
-He comenzado a realizar distintos tipos de gráficos con datos en abierto y otros de interés, con el fin de resolver determinadas preguntas a partir de los datos, prácticar con modelos visuales avanzados que me sirvan de inspiración o simplemente porque aprendo siempre y me divierto. 
+Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría serán proyectos de Visualización de datos y/o Machine Learning, con datos en abierto y otros de interés. El fin es resolver determinadas preguntas a partir de los datos, prácticar con distintos modelos tanto visualescomo de Ml o DL y, sobre todas las cosas, continuar aprendiendo. 
 
 # Survivalschart_chart01
 
