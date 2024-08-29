@@ -39,5 +39,13 @@ Este proyecto de Machine Leraning, a través de la construcción y validación d
 
 ![Matriz de confusion_Proyecto datos fraude](https://github.com/Yusnelkis/Portafolio/blob/main/Proyectos_ML_RandomeForest_datosfraude/Matriz%20de%20confusion_Proyecto%20datos%20fraude.png)
 
+# Course Metrics 
+
+Este proyecto de analítica y visualización de datos con Tableau, me permitió replicar uno de los Dashboards incluidos en el libro "The big Dashboards. 
+
+Puedes acceder a la visualización interactiva en: [[https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
+
+![Matriz de confusion_Proyecto datos fraude](https://github.com/Yusnelkis/Portafolio/blob/main/Proyectos_ML_RandomeForest_datosfraude/Matriz%20de%20confusion_Proyecto%20datos%20fraude.png)
+
 
 
