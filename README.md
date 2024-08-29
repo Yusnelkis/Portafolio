@@ -30,6 +30,8 @@ Se muestran sólo algunos ejemplos.
 
 Puedes acceder a la visualización interactiva en: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta](https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta))
 
+![Uso de barras_datos encuesta_v1](https://github.com/Yusnelkis/Portafolio/blob/main/Barras%20en%20datos%20de%20encuesta/Uso%20de%20barras_datos%20encuesta_v1.png)
+
 
 # Detección de fraudes con tarjetas de crédito
 
