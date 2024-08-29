@@ -35,7 +35,7 @@ Puedes acceder a la visualización interactiva en: [https://public.tableau.com/a
 
 # Detección de fraudes con tarjetas de crédito
 
-Este proyecto de Machine Leraning, a través de la construcción y validación de un modelo de clasificación RandomeForest es resultado del trabajo final evaluado para obtener la certificación en el Programa de Inteligencia Artificial de IBB y IBMSkillUp
+Este proyecto de Machine Leraning, a través de la construcción y validación de un modelo de clasificación RandomForest, es resultado del trabajo final evaluado para obtener la certificación en el Programa de Inteligencia Artificial de IBM e IBMSkillUp
 
 ![Matriz de confusion_Proyecto datos fraude](https://github.com/Yusnelkis/Portafolio/blob/main/Proyectos_ML_RandomeForest_datosfraude/Matriz%20de%20confusion_Proyecto%20datos%20fraude.png)
 
