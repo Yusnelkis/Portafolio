@@ -25,10 +25,15 @@ Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_
 
 # Uso de barras en la visualización de datos de encuesta_ Encuesta de satisfacción en una biblioteca_chart03
 
-COn este ejemplo de visualización de datos de encuesta, se muestra el uso de las traidcionales barras como modelo visual efectivo en la visualización de datos de encuesta de satisfacción.
+Con este ejemplo de visualización de datos de encuesta, se muestra el uso de las traidcionales barras como modelo visual efectivo en la visualización de datos de encuesta de satisfacción.
 Se muestran sólo algunos ejemplos. 
 
 Puedes acceder a la visualización interactiva en: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta](https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta))
+
+
+# Detección de fraudes con tarjetas de crédito
+
+Este proyecto de Machine Leraning, a través de la construcción y validación de un modelo de clasificación RandomeForest es resultado del trabajo final evaluado para obtener la certificación en el Programa de Inteligencia Artificial de IBB y IBMSkillUp
 
 ![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
 
