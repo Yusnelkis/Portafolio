@@ -47,5 +47,20 @@ Puedes acceder a la visualización interactiva en:[https://public.tableau.com/ap
 
 ![Dashboard_Coursemetrics](https://github.com/Yusnelkis/Portafolio/blob/main/Dashboard_Course%20metrics/Pursemterics_Dashboard.PNG)
 
+## Customer Sentiment Analysis survey data 
+
+This project visualizes sentiment data from a simulated customer survey, highlighting positive, neutral, and negative responses across various categories. The dashboard is built using R and `ggplot2`, with storytelling elements to emphasize key insights.
+
+## Key Features
+
+- **Visualization Style:** Bubble charts created with `geom_bspline_closed` to represent sentiment proportions in each category.
+- **Storytelling Insights:**
+  - Aesthetics and Design show strongest positive sentiment.
+  - Customer Service and Durability need immediate attention.
+  - Overall satisfaction rate: 38%.
+- **Data Source:** Simulated survey responses.
+
+![Dashboard_Coursemetrics](https://github.com/Yusnelkis/Portafolio/blob/main/Dashboard_Course%20metrics/Pursemterics_Dashboard.PNG)
+
 
 
