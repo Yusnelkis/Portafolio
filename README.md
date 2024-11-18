@@ -60,7 +60,7 @@ This project visualizes sentiment data from a simulated customer survey, highlig
   - Overall satisfaction rate: 38%.
 - **Data Source:** Simulated survey responses.
 
-![Customer sentiment analysis](Costumer sentiment analysis _ survey data/customer_sentiment.PNG)
+![Costumer sentiment analysis _ survey data/customer_sentiment.PNG](https://github.com/Yusnelkis/Portafolio/blob/c3879fa4f9a8c4801293fa98483406dbfa148a78/Costumer%20sentiment%20analysis%20_%20survey%20data/customer_sentiment.png))
 
 
 
