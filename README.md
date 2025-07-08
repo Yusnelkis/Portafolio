@@ -7,7 +7,7 @@ Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría s
 **Geospatial analysis of urban livability across Barcelona districts using OpenStreetMap data**
 
 ![Barcelona Livability Index](barcelona_livability_map.png)
-![Uso de barras_datos encuesta_v1](https://github.com/Yusnelkis/Portafolio/blob/main/Barras%20en%20datos%20de%20encuesta/Uso%20de%20barras_datos%20encuesta_v1.png)
+
 
 ## Project Overview
 Multi-criteria analysis evaluating livability across 8 Barcelona districts based on density of urban amenities. Uses OSMnx for data extraction and creates professional choropleth visualization with weighted composite scoring.
