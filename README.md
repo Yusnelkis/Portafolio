@@ -6,7 +6,7 @@ Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría s
 
 **Geospatial analysis of urban livability across Barcelona districts using OpenStreetMap data**
 
-![Barcelona Livability Index](Barcelona_Livability_Index/BCN Map livability Index_Clean.png)
+![Barcelona Livability Index]([(https://github.com/Yusnelkis/Portafolio/blob/main/Barcelona_Livability_Index/BCN%20Map%20livability%20Index_Clean.png)]
 
 
 ## Project Overview
