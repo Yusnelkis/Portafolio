@@ -2,6 +2,40 @@
 
 Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría serán proyectos de Visualización de datos y/o Machine Learning, con datos en abierto y otros de interés. El fin es resolver determinadas preguntas a partir de los datos, prácticar con distintos modelos tanto visuales como de Ml o DL y, sobre todas las cosas, disfrutar el camino mientras aprendo.
 
+# 🏙️ Barcelona Livability Index
+
+**Geospatial analysis of urban livability across Barcelona districts using OpenStreetMap data**
+
+![Barcelona Livability Index](barcelona_livability_map.png)
+
+## Project Overview
+Multi-criteria analysis evaluating livability across 8 Barcelona districts based on density of urban amenities. Uses OSMnx for data extraction and creates professional choropleth visualization with weighted composite scoring.
+
+**Key Results**: Eixample (92) and Ciutat Vella (86) lead in livability, while peripheral districts show lower service density.
+
+## OSM Data Dimensions
+**Parks & Recreation**: `leisure=park`, `leisure=garden`, `leisure=recreation_ground`, `landuse=recreation_ground`
+
+**Healthcare Services**: `amenity=hospital`, `amenity=clinic`, `amenity=pharmacy`, `amenity=doctors`, `healthcare=*`
+
+**Educational Facilities**: `amenity=school`, `amenity=university`, `amenity=kindergarten`, `amenity=college`
+
+**Commercial Services**: `shop=*`, `amenity=marketplace`, `building=retail`, `landuse=commercial`
+
+## Technical Implementation
+- **Data Source**: OpenStreetMap via OSMnx Overpass API
+- **Analysis**: Spatial density calculation per km² and weighted composite scoring
+- **Visualization**: Custom matplotlib choropleth with subtle urban context
+- **Coverage**: 8/10 districts with sufficient data quality (>10 amenities per category)
+
+## Skills Demonstrated
+- Geospatial data processing (GeoPandas, OSMnx)
+- Multi-criteria analysis and normalization
+- Cartographic visualization design
+- Scientific transparency in data limitations
+
+**Technologies**: Python • OSMnx • GeoPandas • Matplotlib
+
 # Survivalschart_chart01
 
 Fuente de inspiración:  
