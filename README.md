@@ -1,6 +1,16 @@
 # Portafolio
 
-Aprovecho este espacio para compartir algunos de mis proyectos. En su mayoría serán proyectos de Visualización de datos y/o Machine Learning, con datos en abierto y otros de interés. El fin es resolver determinadas preguntas a partir de los datos, prácticar con distintos modelos tanto visuales como de Ml o DL y, sobre todas las cosas, disfrutar el camino mientras aprendo.
+Welcome to my data science portfolio. Here, I share a selection of personal projects, mainly focused on data visualization, machine learning, and occasionally deep learning.
+
+These projects are built using open datasets or curated data sources that spark analytical interest. My goals are:
+
+To answer meaningful questions using data
+
+To practice and improve my skills in visual storytelling, ML/DL modeling, and data workflows
+
+And most importantly, to enjoy the learning journey 🚀
+
+Feel free to explore and connect if anything inspires you.
 
 # 🏙️ Barcelona Livability Index
 
@@ -46,38 +56,40 @@ Github de Tanya Shapiro [tashapiro](https://github.com/tashapiro/TidyTuesday/com
 
 # Pablo de Olavide University at Macro citation reports_ chart02
 
-Con esta visualización, además de querer testar el nuevo el nuevo modelo visual de Datawrapper (small multiples lines), quería realizar una primera mirada al comportamiento y perfil de citación de la Universidad Pablo de Olavide en los Macro citation reports de Incites. 
-Es una primera aproximación usando los datos de Incites (Suit bibliométrica de Web of Science), durante el periodo 2010_2021. 
+With this visualization, beyond testing Datawrapper’s new small multiples line chart feature, I aimed to take a first look at the citation behavior and profile of the Universidad Pablo de Olavide using the Macro Citation Reports from InCites.
 
-Los Macro Citation Topics (MCT) son informes que proporcionan una visión general de los temas y áreas de investigación más destacados en un campo académico específico, basados en el análisis de las citas dentro de la literatura científica.
-Aún así esto resulta, de momento, insuficiente en tanto he utilizado una única base de datos. Es recomendable utilizar los Macro Citation Topics junto con otras fuentes de información
+This is a preliminary analysis based on InCites data (the bibliometric suite from Web of Science), covering the period 2010–2021.
 
-Puedes acceder a la visualización interactiva en: [https://www.datawrapper.de/_/j0J9c](https://datawrapper.dwcdn.net/j0J9c/1/)
+Macro Citation Topics (MCTs) are reports that offer an overview of the most prominent research themes and areas within a specific academic field, based on citation analysis from the scientific literature.
+
+However, this remains a partial view, as it relies on a single data source. For more robust insights, it is recommended to complement Macro Citation Topics with additional data sources.
+
+Explore the interactive visualization at: [https://www.datawrapper.de/_/j0J9c](https://datawrapper.dwcdn.net/j0J9c/1/)
 
 ![UPO_Macrocitationreports](https://github.com/Yusnelkis/Portafolio/blob/main/UPO%20en%20los%20Macro%20Citation%20%20report/UPO_Macrocitationsreports_09022024.png)
 
 
-# Uso de barras en la visualización de datos de encuesta_ Encuesta de satisfacción en una biblioteca_chart03
+#  Using Bar Charts for Survey Data Visualization — Library Satisfaction Survey _chart03
+This example showcases the use of traditional bar charts as an effective visual model for displaying survey satisfaction data.
 
-Con este ejemplo de visualización de datos de encuesta, se muestra el uso de las traidcionales barras como modelo visual efectivo en la visualización de datos de encuesta de satisfacción.
-Se muestran sólo algunos ejemplos. 
+Only a few selected examples are shown for illustration purposes.
 
-Puedes acceder a la visualización interactiva en: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
+You can access the interactive visualization at: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
 
 ![Uso de barras_datos encuesta_v1](https://github.com/Yusnelkis/Portafolio/blob/main/Barras%20en%20datos%20de%20encuesta/Uso%20de%20barras_datos%20encuesta_v1.png)
 
 
-# Detección de fraudes con tarjetas de crédito
+# Credit Card Fraud Detection
 
-Este proyecto de Machine Leraning, a través de la construcción y validación de un modelo de clasificación RandomForest, es resultado del trabajo final evaluado para obtener la certificación en el Programa de Inteligencia Artificial de IBM e IBMSkillUp
+This machine learning project, developed through the construction and validation of a Random Forest classification model, was completed as the final assessed work to obtain certification in the Artificial Intelligence Program by IBM and IBM SkillUp.
 
 ![Matriz de confusion_Proyecto datos fraude](https://github.com/Yusnelkis/Portafolio/blob/main/Proyectos_ML_RandomeForest_datosfraude/Matriz%20de%20confusion_Proyecto%20datos%20fraude.png)
 
 # Course Metrics 
 
-Este proyecto de analítica y visualización de datos con Tableau, me permitió replicar uno de los Dashboards incluidos en el libro "The big Dashboards. 
+This data analytics and visualization project using Tableau allowed me to replicate one of the dashboards featured in the book “The Big Book of Dashboards.”
 
-Puedes acceder a la visualización interactiva en:[https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
+You can access the interactive visualization at: [https://public.tableau.com/app/profile/yusnelkis/viz/Encuestasatisfaccinbiblioteca_2023_YMG270724/Usodebarras_datosencuesta]
 
 ![Dashboard_Coursemetrics](https://github.com/Yusnelkis/Portafolio/blob/main/Dashboard_Course%20metrics/Pursemterics_Dashboard.PNG)
 
