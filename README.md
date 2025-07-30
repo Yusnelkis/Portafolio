@@ -56,7 +56,8 @@ Github de Tanya Shapiro [tashapiro](https://github.com/tashapiro/TidyTuesday/com
 
 # 🌍 Shadow Economies: The Hidden Networks of Informal Markets in Africa
 
-![survivals](https://github.com/Yusnelkis/Survivalschart_Day01/blob/c7fb8d2fc74077349a5fdf95572d59fcfcae5010/Imagenes/survivalists_week01.png)
+![survivals](https://github.com/Yusnelkis/Portafolio/blob/9913854272b4ebac75192e1e02bfaf0b8a1e74bd/Shadow%20Economies%3A%20The%20Hidden%20Networks%20of%20Informal%20Markets%20in%20Africa/iNFORMAL%20aFRICAN%20ECONOMY.png)
+
 
 This project explores the hidden structure of informal economies across **49 African nations (2018–2022)** using **network analysis** and **weighted degree clustering**.
 
