@@ -54,6 +54,47 @@ Github de Tanya Shapiro [tashapiro](https://github.com/tashapiro/TidyTuesday/com
 
 ![survivals](https://github.com/Yusnelkis/Survivalschart_Day01/blob/c7fb8d2fc74077349a5fdf95572d59fcfcae5010/Imagenes/survivalists_week01.png)
 
+# 🌍 Shadow Economies: The Hidden Networks of Informal Markets in Africa
+
+This project explores the hidden structure of informal economies across **49 African nations (2018–2022)** using **network analysis** and **weighted degree clustering**.
+
+The result is a circular network visualization that reveals cross-regional patterns of economic informality — from **North African formalist clusters** to **Traditional Market Zones**, where informal economies can exceed **60% of GDP**.
+
+## 🧠 What this visualization shows
+
+- **Node size**: Economic importance within the network (weighted degree)
+- **Arcs**: Similarities in economic structure between countries based on informal market intensity
+- **Color-coded clusters**: Represent six macroeconomic typologies across the continent
+- **Countries** are positioned by similarity, not geography
+
+> This visualization helps expose regional economic parallels not always visible through traditional indicators.
+
+## 🛠 Tools and Data
+
+- **Data sources**:
+  - World Bank
+  - IMF
+  - ILO estimates (2018–2022)
+- **Visualization tools**:
+  - Built using [Gephi](https://gephi.org/) and edited with graphic design tools
+
+## 📈 Use case
+
+This project is part of a broader research portfolio on **informal markets**, **development economics**, and **regional economic resilience** in Africa.
+
+It aims to provide a **macro-structural lens** for researchers, policymakers, and international organizations interested in the role of informal sectors in national economies.
+
+## 🎯 Author
+
+**Yusnelkis Milanés Guisado**  
+Data Visualization & Economic Research  
+✉️ [Add your email or link here]  
+🌐 [Link to interactive version if available]
+
+---
+
+
+
 # Pablo de Olavide University at Macro citation reports_ chart02
 
 With this visualization, beyond testing Datawrapper’s new small multiples line chart feature, I aimed to take a first look at the citation behavior and profile of the Universidad Pablo de Olavide using the Macro Citation Reports from InCites.
