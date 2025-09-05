@@ -21,7 +21,7 @@ This project visualizes scenarios of **data center energy demand, capacity, effi
 
 It uses data from the [IEA – Energy and AI](https://www.iea.org/data-and-statistics/data-product/energy-and-ai).
 
-![Wiring the AI Era: Data Center Energy & Capacity, 2020–2035](https://github.com/Yusnelkis/Portafolio/blob/main/Barcelona_Livability_Index/BCN%20Map%20livability%20Index_Clean.png)
+![Wiring the AI Era: Data Center Energy & Capacity, 2020–2035](Enery Data Center AI/Energy and AI.PNG)
 
 The design emphasizes **clarity, narrative, and usability**:
 - Strong, compact headline for impact.  
