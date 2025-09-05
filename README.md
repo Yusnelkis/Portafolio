@@ -28,7 +28,6 @@ The design emphasizes **clarity, narrative, and usability**:
 - Metrics defined in plain language for non-technical audiences.  
 - Interactive filtering to explore scenarios without clutter.  
 
----
 
 ## ✨ Features
 - **Interactive filters** → toggle between scenario lines and data center types.  
@@ -36,14 +35,6 @@ The design emphasizes **clarity, narrative, and usability**:
 - **Responsive layout** → optimized for both desktop and mobile.  
 - **Clean export** → designed to be shared as image or PDF.  
 - **Information design principles applied**: hierarchy, minimal redundancy, storytelling.  
-
----
-
-## 📑 Scenarios
-- **OBS** = Observed  
-- **LO** = Lift-Off  
-- **HE** = High Efficiency  
-- **HW** = Headwinds  
 
 ---
 
