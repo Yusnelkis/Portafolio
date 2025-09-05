@@ -12,6 +12,65 @@ And most importantly, to enjoy the learning journey 🚀
 
 Feel free to explore and connect if anything inspires you.
 
+from pathlib import Path
+
+### 📊 Wiring the AI Era: Data Center Energy & Capacity, 2020–2035
+
+## 🌍 Overview
+This project visualizes scenarios of **data center energy demand, capacity, efficiency (PUE)**, and load factors from **2020–2035**, in the context of the **AI era**.
+
+It uses data from the [IEA – Energy and AI](https://www.iea.org/data-and-statistics/data-product/energy-and-ai).
+
+The design emphasizes **clarity, narrative, and usability**:
+- Strong, compact headline for impact.  
+- Key insights highlighted upfront.  
+- Unified legend explaining **Types (color)** and **Scenarios (line styles)**.  
+- Metrics defined in plain language for non-technical audiences.  
+- Interactive filtering to explore scenarios without clutter.  
+
+---
+
+## ✨ Features
+- **Interactive filters** → toggle between scenario lines and data center types.  
+- **Legend-first design** → consistent color and line codes.  
+- **Responsive layout** → optimized for both desktop and mobile.  
+- **Clean export** → designed to be shared as image or PDF.  
+- **Information design principles applied**: hierarchy, minimal redundancy, storytelling.  
+
+---
+
+## 📑 Scenarios
+- **OBS** = Observed  
+- **LO** = Lift-Off  
+- **HE** = High Efficiency  
+- **HW** = Headwinds  
+
+---
+
+## 📏 Metrics (in plain words)
+- **Consumption** = Annual electricity demand (TWh)  
+- **Capacity** = Installed data center capacity (GW)  
+- **Load factor** = Average utilization of capacity (%)  
+- **PUE** = Power Usage Effectiveness (efficiency ratio)  
+
+---
+
+## 🛠️ Technology Stack
+- **HTML5 / CSS3** → responsive structure & layout.  
+- **JavaScript (ES6+)** → interactivity and filtering.  
+- **[D3.js](https://d3js.org/)** → data-driven charts and dynamic visualization.  
+- **JetBrains Mono & Inter fonts** → clear separation of data (mono) vs narrative (sans).  
+- No heavy framework: built as a **lightweight standalone app** for maximum portability.  
+
+---
+
+## 🚀 How to Run
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/energy-ai-datacenters.git
+   cd energy-ai-datacenters
+
+
 # 🏙️ Barcelona Livability Index
 
 **Geospatial analysis of urban livability across Barcelona districts using OpenStreetMap data**
