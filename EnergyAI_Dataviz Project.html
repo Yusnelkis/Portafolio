@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Wiring the AI Era: What Future for Data Center Energy &amp; Capacity?</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+  :root{
+    --bg:#0a0e14; --fg:#c9d1d9; --muted:#8b949e;
+
+    --coral:#FF6B6B; --mango:#FFC947; --aqua:#4ECDC4; --gray:#6C757D;
+
+    --type-h: var(--aqua);
+    --type-c: var(--coral);
+    --type-e: var(--mango);
+
+    --divider: var(--gray);
+
+    /* Layout */
+    --mini: 320px;
+    --mini-h: 0.58;       /* lower = less height per mini */
+    --gap: 32px;
+    --axis-left: 72px;
+    --canvas-w: calc(var(--axis-left) + var(--mini)*3 + var(--gap)*2);
+
+    --v-gap-lg: 20px;
+    --v-gap-sm: 10px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--fg)}
+
+  header, .canvas { width: var(--canvas-w); margin: 0 auto; }
+  @media (max-width:1180px){
+    header, .canvas { width: calc(var(--axis-left) + var(--mini)*2 + var(--gap)); }
+  }
+  @media (max-width:820px){
+    header, .canvas { width: calc(var(--axis-left) + var(--mini)); }
+  }
+
+  header{padding:22px 0 0;text-align:center}
+  header h1{
+    font-family:'JetBrains Mono',monospace;font-weight:600;text-transform:uppercase;
+    font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+    letter-spacing: clamp(.02em, .4vw, .06em);
+    line-height:1.1;margin-bottom:6px;overflow-wrap:anywhere
+  }
+  .subtitle{font-size:.92rem;color:#cfd6de;letter-spacing:.03em;margin-bottom:4px}
+  .key-insights{
+    margin:6px auto 6px; max-width: 70ch; text-align:center;
+    font:.95rem/1.45 'Inter',sans-serif; color:#e0e6ec
+  }
+
+  .micro-how{
+    width:var(--canvas-w); margin:4px auto 8px; text-align:center;
+    font:.86rem/1.3 'Inter',sans-serif; color:#cfd6de
+  }
+  .micro-how b{ color:#fff; font-weight:600 }
+
+  .legend,.typedots{
+    display:inline-flex;max-width:100%;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;border:none;background:transparent;padding:0
+  }
+  .legend .title,.typedots .title{font:600 .72rem 'JetBrains Mono',monospace;color:#fff;letter-spacing:.12em;margin-right:4px}
+  .leg-item{display:flex;align-items:center;gap:6px;font:.74rem 'JetBrains Mono',monospace;color:#c9d1d9;cursor:pointer}
+  .sample-line{width:30px;height:0;border-top:2px solid #9aa3ad;border-radius:2px}
+  .s-obs{border-top-style:solid}
+  .s-lo{border-top-style:dashed}
+  .s-he{border-top-style:dashed;border-top-width:2px}
+  .s-hw{border-top-style:dashed;border-top-width:2px}
+  .shape{display:inline-block;width:9px;height:9px}
+  .circ{border-radius:50%;background:#9aa3ad}
+  .sq{background:#9aa3ad}
+  .tri{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid #9aa3ad}
+  .dia{transform:rotate(45deg);background:#9aa3ad;width:8px;height:8px}
+  .type-dot{width:9px;height:9px;border-radius:50%}
+  .t-h{background:var(--type-h)} .t-c{background:var(--type-c)} .t-e{background:var(--type-e)}
+
+  .controls{display:flex;flex-direction:column;gap:6px}
+  .controls .row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .controls .label{font:600 .72rem 'JetBrains Mono',monospace;color:#9fb0bf;letter-spacing:.08em}
+  .controls .chip{
+    border:1px solid #ffffff22; background:#0b1016bb; color:#cfd6de;
+    padding:6px 10px; border-radius:999px; font:.78rem 'Inter',sans-serif; cursor:pointer
+  }
+  .controls .chip.active{border-color:#cfd6de; color:#fff}
+  .controls label.t{font:.78rem 'Inter',sans-serif; color:#cfd6de; display:inline-flex; gap:6px; align-items:center}
+  .controls input{accent-color:#cfd6de}
+
+  .ui-band{
+    --band-pad: 10px; --band-gap: 10px;
+    width: var(--canvas-w);
+    margin: 6px auto 10px; padding: var(--band-pad) 0;
+    border-top: 1px solid #ffffff16; border-bottom: 1px solid #ffffff16;
+  }
+  .rulebar{
+    display:grid; grid-template-columns: 1fr 1fr; align-items:center; gap:16px;
+    margin-bottom: var(--band-gap); position: relative;
+  }
+  .rulebar::before, .rulebar::after{
+    content:""; position:absolute; left:0; right:0; height:1px;
+    background:linear-gradient(90deg,transparent 0,#ffffff12 12%,#ffffff12 88%,transparent 100%);
+  }
+  .rulebar::before{ top:-8px; }
+  .rulebar::after{ bottom:-8px; }
+  .rulebar #legend-scen{ justify-content:flex-start; }
+  .rulebar #legend-type{ justify-content:flex-end; }
+
+  .controls .row-focus{ padding-bottom:6px; border-bottom:1px dashed #ffffff18; }
+  .controls .row-types{ padding-top:2px; }
+
+  @media (max-width: 820px){
+    .rulebar{ grid-template-columns: 1fr; gap:8px; }
+    .rulebar #legend-scen, .rulebar #legend-type{ justify-content:center; }
+  }
+
+  .colheads{display:grid;grid-template-columns:repeat(3, var(--mini));justify-content:center;gap:var(--gap);margin:var(--v-gap-sm) 0 var(--v-gap-sm)}
+  @media (max-width:1180px){ .colheads{ grid-template-columns:repeat(2, var(--mini)); } }
+  @media (max-width:820px){ .colheads{ grid-template-columns:var(--mini); } }
+  .colhead{display:flex;gap:6px;align-items:center;justify-content:center;font:.85rem 'JetBrains Mono',monospace;color:#e5eef5;letter-spacing:.08em;text-transform:uppercase}
+  .colhead .dot{width:8px;height:8px;border-radius:50%}
+  .dot.h{background:var(--type-h)} .dot.c{background:var(--type-c)} .dot.e{background:var(--type-e)}
+
+  .viz{padding:0 0 80px}
+  .group{margin-top:28px}
+  .group .canvas{display:grid;grid-template-columns: var(--axis-left) repeat(3, var(--mini));gap:var(--gap);justify-content:center;align-items:start}
+  .group-h{display:contents}
+  .group-title{
+    grid-column:2 / span 3;
+    justify-self:start;
+    display:flex; gap:10px; align-items:baseline;
+    font:500 .98rem 'JetBrains Mono',monospace;color:#fff;letter-spacing:.14em;text-transform:uppercase
+  }
+  .group-title .group-unit{
+    font:600 .72rem 'JetBrains Mono',monospace; letter-spacing:.06em; color:var(--muted);
+    text-transform:none;
+  }
+
+  .grid{grid-column:1 / -1;display:grid;grid-template-columns: var(--axis-left) repeat(3, var(--mini));gap:var(--gap);justify-content:center}
+  .grid:before{content:"";display:block;width:var(--axis-left)}
+  .mini{width:var(--mini);padding:2px 0 0}
+  .chart{display:block;width:100%;height:auto;overflow:visible}
+
+  .axis text{font:10px 'JetBrains Mono',monospace;fill:#9aa3ad;text-anchor:middle}
+  .axis .tick line{stroke:#27303a;stroke-width:.6}
+  .axis path{display:none}
+
+  .divider{stroke:var(--divider);stroke-width:1.1;stroke-dasharray:3 3;opacity:.95}
+
+  .under { fill:none; stroke-linecap:round; stroke-linejoin:round; opacity:.20; filter:url(#soften) }
+  .sheath{ fill:none; stroke-linecap:round; stroke-linejoin:round; opacity:.35; filter:url(#soften) }
+  .core  { fill:none; stroke-linecap:round; stroke-linejoin:round }
+  .gloss { fill:none; stroke-linecap:round; stroke-linejoin:round; opacity:.18; mix-blend-mode:screen }
+
+  .obs{stroke-width:2.1}
+  .lo{ stroke-width:1.9; stroke-dasharray:10 5 }
+  .he{ stroke-width:1.9; stroke-dasharray:6 3 2 3 }
+  .hw{ stroke-width:1.9; stroke-dasharray:4 3 }
+
+  .pt{stroke:#0a0e14;stroke-width:1}
+  .end{
+    font:10px 'JetBrains Mono',monospace; fill:currentColor; opacity:.95;
+    paint-order: stroke fill; stroke:#0a0e14; stroke-width:3px;
+  }
+  .end-leader{ stroke: currentColor; stroke-width:.8; opacity:.85 }
+
+  .mini-foot{font:.6rem 'JetBrains Mono',monospace;color:#9fb0bf;margin:6px 2px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mini-foot b{font-weight:600;color:#cfd6de}
+
+  .source{position:fixed;left:16px;bottom:16px;background:#0d1218;border:1px solid #1f2937;padding:6px 8px;border-radius:6px;font:.7rem 'JetBrains Mono',monospace;color:#8b949e;backdrop-filter:blur(6px);z-index:1000}
+  .author{position:fixed;right:16px;bottom:16px;background:#0d1218;border:1px solid #1f2937;padding:6px 8px;border-radius:6px;font:.7rem 'JetBrains Mono',monospace;color:#8b949e;backdrop-filter:blur(6px);display:flex;align-items:center;gap:8px;z-index:1000}
+  .author strong{color:#c9d1d9}
+  .logo{opacity:.85}
+
+  #tip{
+    position:fixed;inset:auto auto 0 0;pointer-events:none;transform:translate(-9999px,-9999px);
+    background:#0d1218;border:1px solid #1f2937;padding:6px 8px;border-radius:6px;
+    font:.72rem 'JetBrains Mono',monospace;color:#cfd6de;z-index:1000
+  }
+
+  .pulse{ fill:currentColor; filter:none; pointer-events:none; opacity:.95; }
+  .locked{outline:1px dashed #9aa3ad; outline-offset:4px; border-radius:8px}
+</style>
+<style id="source-link-style">
+  .source a {
+    color: #fff;
+    text-decoration: underline dotted;
+  }
+  .source a:hover {
+    color: var(--c-wire, #0ff);
+    text-decoration: underline;
+  }
+</style>
+<style id="methodology-style">
+  .micro-scen{
+    width:var(--canvas-w);
+    margin: -2px auto 16px;
+    text-align:center;
+    font:.82rem/1.3 'Inter',sans-serif;
+    color:#cfd6de;
+  }
+  .methodology{
+    width: var(--canvas-w);
+    margin: 24px auto 72px;
+    background:#0d1218;
+    border:1px solid #1f2937;
+    border-radius:10px;
+    padding:12px 16px;
+    color:#cfd6de;
+    font:.86rem/1.45 'Inter',sans-serif;
+  }
+  .methodology h3{
+    color:#fff;
+    font:700 .95rem 'Inter',sans-serif;
+    letter-spacing:.02em;
+    margin:0 0 6px 0;
+  }
+  .methodology ul{ margin:6px 0 0 1.1em; padding:0; }
+  .methodology li{ margin:2px 0; }
+  .methodology b{ color:#e6edf3; }
+</style>
+<style id="refined-title-style">
+      header h1 {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 800 !important;
+        color:#fff !important;
+        font-size: clamp(1.9rem, 3vw, 2.4rem) !important;
+        letter-spacing: -0.01em !important;
+        line-height:1.15 !important;
+        text-align: center !important;
+        margin: 0 0 32px 0 !important;
+      }
+      header .insights, header p, header .subtitle {
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 400 !important;
+        color: #ccc !important;
+        max-width: 70ch;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+      header .insights strong { font-weight: 600 !important; color: #fff !important; }
+    </style>
+<style id="methodology-top-style">
+  .methodology-top{
+    width: var(--canvas-w);
+    margin: 8px auto 18px;
+    background:#0d1218;
+    border:1px solid #1f2937;
+    border-radius:10px;
+    padding:10px 12px;
+    color:#cfd6de;
+    font:.86rem/1.45 'Inter',sans-serif;
+  }
+  .methodology-top .method-title{
+    font:700 .9rem 'Inter',sans-serif;
+    color:#fff; margin-bottom:4px;
+    letter-spacing:.02em;
+  }
+  .methodology-top b{ color:#e6edf3; }
+</style>
+<style id="legend-method-style">
+.legend-method{
+  width: var(--canvas-w);
+  margin: 16px auto 24px;
+  background:#0d1218;
+  border:1px solid #1f2937;
+  border-radius:10px;
+  padding:14px 18px;
+  color:#cfd6de;
+  font:.86rem/1.45 'Inter',sans-serif;
+}
+.legend-method h3{
+  color:#fff;
+  font:700 1rem 'Inter',sans-serif;
+  margin:0 0 10px 0;
+}
+.legend-block{ margin-bottom:10px; }
+.legend-title{
+  font:600 .9rem 'Inter',sans-serif;
+  color:#fff;
+  margin-bottom:2px;
+}
+.legend-method ul{ margin:0 0 0 1.1em; padding:0; }
+.legend-method li{ margin:2px 0; }
+</style>
+<style id="legend-compact-style">
+.legend-compact{
+  width: var(--canvas-w);
+  margin: 16px auto 24px;
+  background:#0d1218;
+  border:1px solid #1f2937;
+  border-radius:10px;
+  padding:12px 16px;
+  color:#cfd6de;
+  font:.85rem/1.45 'Inter',sans-serif;
+}
+.legend-compact h3{
+  color:#fff;
+  font:700 .95rem 'Inter',sans-serif;
+  margin:0 0 6px 0;
+}
+.legend-line{ margin:4px 0; }
+.legend-compact .metrics{ color:#9ca3af; }
+.legend-compact b{ color:#e6edf3; }
+</style>
+<style id="micro-how-tweak">
+  .micro-how{
+    width: var(--canvas-w);
+    margin: 6px auto 10px;
+    text-align: center;
+    font: .88rem/1.45 'Inter', sans-serif;
+    color: #cfd6de;
+  }
+  .micro-how b{ color:#fff; font-weight:600; }
+</style>
+<style id="micro-two-line-style">
+  .micro-how{
+    width: var(--canvas-w);
+    margin: 8px auto 2px;
+    text-align: center;
+    font: .9rem/1.45 'Inter', sans-serif;
+    color: #cfd6de;
+  }
+  .micro-how b{ color:#fff; font-weight:600; }
+  .micro-metrics{
+    width: var(--canvas-w);
+    margin: 2px auto 12px;
+    text-align: center;
+    font: .84rem/1.4 'Inter', sans-serif;
+    color: #9ca3af;
+  }
+</style>
+
+<style id="remove-colheads-tweak">
+  .ui-band{ margin-bottom: 8px !important; }
+  .viz{ padding-top: 0 !important; }
+</style>
+</head>
+<body>
+<header class="canvas">
+<h1>Wiring the AI Era: What Future for Data Center Energy &amp; Capacity?</h1>
+<p class="key-insights">
+<strong>Key insights:</strong> Hyperscale drives absolute demand; High-Efficiency compresses spreads after 2030; only HE approaches PUE ≈1.1–1.2 by 2035.
+    </p>
+</header>
+<p class="micro-how">Color = <b>Type</b> · Dashes/shape = <b>Scenario</b> · Dashed line at <b>2024</b> = branching point.</p><p class="micro-metrics">Metrics: Consumption = annual TWh · Capacity = GW installed · Load factor = % use · PUE = efficiency ratio</p>
+<section class="ui-band canvas">
+<div class="rulebar">
+<div class="legend" id="legend-scen">
+<span class="title">Scenarios</span>
+<span class="leg-item" data-scen="Observed"><span class="sample-line s-obs"></span><span class="shape circ"></span>Observed (OBS)</span>
+<span class="leg-item" data-scen="Lift-Off"><span class="sample-line s-lo"></span><span class="shape sq"></span>Lift-Off (LO)</span>
+<span class="leg-item" data-scen="High Efficiency"><span class="sample-line s-he"></span><span class="shape tri"></span>High Efficiency (HE)</span>
+<span class="leg-item" data-scen="Headwinds"><span class="sample-line s-hw"></span><span class="shape dia"></span>Headwinds (HW)</span>
+</div>
+<div class="legend typedots" id="legend-type">
+<span class="title">Types</span>
+<span class="leg-item" data-type="Hyperscale"><span class="type-dot t-h"></span>Hyperscale</span>
+<span class="leg-item" data-type="Colocation"><span class="type-dot t-c"></span>Colocation</span>
+<span class="leg-item" data-type="Enterprise"><span class="type-dot t-e"></span>Enterprise</span>
+</div>
+</div>
+<div class="controls">
+<div class="row row-focus">
+<span class="label">Focus:</span>
+<button class="chip" data-focus="all" id="focusAll">All</button>
+<button class="chip" data-scen="Observed">OBS</button>
+<button class="chip" data-scen="Lift-Off">LO</button>
+<button class="chip" data-scen="High Efficiency">HE</button>
+<button class="chip" data-scen="Headwinds">HW</button>
+</div>
+<div class="row row-types">
+<span class="label">Types:</span>
+<label class="t"><input checked="" data-type="Hyperscale" type="checkbox"/> Hyperscale</label>
+<label class="t"><input checked="" data-type="Colocation" type="checkbox"/> Colocation</label>
+<label class="t"><input checked="" data-type="Enterprise" type="checkbox"/> Enterprise</label>
+</div>
+</div>
+</section>
+
+<main class="viz" id="viz"></main>
+<div id="tip"></div>
+<div class="source">Source: <a href="https://www.iea.org/data-and-statistics/data-product/energy-and-ai" rel="noopener" target="_blank">IEA – Energy and AI</a></div>
+<div class="author">
+<svg aria-hidden="true" class="logo" height="18" viewbox="0 0 18 18" width="18">
+<rect fill="none" height="16" rx="1" stroke="#888888" stroke-width="0.8" width="16" x="1" y="1"></rect>
+<circle cx="6" cy="6" fill="#FFC947" r="1.2"></circle>
+<circle cx="12" cy="6" fill="#0F3057" r="1.2"></circle>
+<circle cx="6" cy="12" fill="#4ECDC4" r="1.2"></circle>
+<circle cx="12" cy="12" fill="#FF6B6B" r="1.2"></circle>
+<line opacity="0.4" stroke="#888888" stroke-width="0.6" x1="6" x2="12" y1="6" y2="12"></line>
+<line opacity="0.4" stroke="#888888" stroke-width="0.6" x1="12" x2="6" y1="6" y2="12"></line>
+</svg>
+<span>by <strong>Yusnelkis Milanés Guisado</strong></span>
+</div>
+<script>
+  /* ---------- DATA ---------- */
+  const DATA = {
+    'Electricity Consumption': { unit:'TWh', data:{
+      'Hyperscale':[ {year:2020,Observed:50},{year:2023,Observed:78},{year:2024,Observed:95},{year:2030,'Lift-Off':240,'High Efficiency':180,Headwinds:160},{year:2035,'Lift-Off':420,'High Efficiency':290,Headwinds:240} ],
+      'Colocation':[ {year:2020,Observed:30},{year:2023,Observed:42},{year:2024,Observed:48},{year:2030,'Lift-Off':125,'High Efficiency':85,Headwinds:75},{year:2035,'Lift-Off':210,'High Efficiency':135,Headwinds:115} ],
+      'Enterprise':[ {year:2020,Observed:85},{year:2023,Observed:100},{year:2024,Observed:106},{year:2030,'Lift-Off':213,'High Efficiency':234,Headwinds:144},{year:2035,'Lift-Off':303,'High Efficiency':372,Headwinds:128} ]
+    }},
+    'Installed Capacity': { unit:'GW', data:{
+      'Hyperscale':[ {year:2020,Observed:20},{year:2023,Observed:31},{year:2024,Observed:36},{year:2030,'Lift-Off':85,'High Efficiency':108,Headwinds:89},{year:2035,'Lift-Off':103,'High Efficiency':139,Headwinds:103} ],
+      'Colocation':[ {year:2020,Observed:19},{year:2023,Observed:27},{year:2024,Observed:35},{year:2030,'Lift-Off':86,'High Efficiency':118,Headwinds:93},{year:2035,'Lift-Off':116,'High Efficiency':172,Headwinds:115} ],
+      'Enterprise':[ {year:2020,Observed:20},{year:2023,Observed:25},{year:2024,Observed:27},{year:2030,'Lift-Off':55,'High Efficiency':78,Headwinds:3},{year:2035,'Lift-Off':58,'High Efficiency':93,Headwinds:3} ]
+    }},
+    'Load Factor': { unit:'%', data:{
+      'Hyperscale':[ {year:2020,Observed:65},{year:2023,Observed:68},{year:2024,Observed:70},{year:2030,'Lift-Off':85,'High Efficiency':78,Headwinds:74},{year:2035,'Lift-Off':88,'High Efficiency':82,Headwinds:76} ],
+      'Colocation':[ {year:2020,Observed:45},{year:2023,Observed:48},{year:2024,Observed:50},{year:2030,'Lift-Off':68,'High Efficiency':58,Headwinds:54},{year:2035,'Lift-Off':75,'High Efficiency':62,Headwinds:56} ],
+      'Enterprise':[ {year:2020,Observed:55},{year:2023,Observed:57},{year:2024,Observed:58},{year:2030,'Lift-Off':65,'High Efficiency':62,Headwinds:59},{year:2035,'Lift-Off':68,'High Efficiency':64,Headwinds:60} ]
+    }},
+    'PUE': { unit:'Ratio', data:{
+      'Hyperscale':[ {year:2020,Observed:1.6},{year:2023,Observed:1.52},{year:2024,Observed:1.5},{year:2030,'Lift-Off':1.28,'High Efficiency':1.15,Headwinds:1.35},{year:2035,'Lift-Off':1.22,'High Efficiency':1.08,Headwinds:1.32} ],
+      'Colocation':[ {year:2020,Observed:1.8},{year:2023,Observed:1.72},{year:2024,Observed:1.7},{year:2030,'Lift-Off':1.45,'High Efficiency':1.25,Headwinds:1.55},{year:2035,'Lift-Off':1.38,'High Efficiency':1.18,Headwinds:1.52} ],
+      'Enterprise':[ {year:2020,Observed:2.0},{year:2023,Observed:1.92},{year:2024,Observed:1.9},{year:2030,'Lift-Off':1.65,'High Efficiency':1.45,Headwinds:1.75},{year:2035,'Lift-Off':1.58,'High Efficiency':1.35,Headwinds:1.72} ]
+    }}
+  };
+
+  const TYPES = ['Hyperscale','Colocation','Enterprise'];
+  const TYPE_COLOR = {'Hyperscale':'--type-h','Colocation':'--type-c','Enterprise':'--type-e'};
+  /* Ticks sin 2023 para evitar solape */
+  const tickYears = [2020, 2024, 2030, 2035];
+
+  /* CSS helpers */
+  const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const cssNum = name => parseFloat(cssVar(name));
+  const resolveColor = name => {
+    const v = cssVar(name);
+    const m = v.match(/var\((--[^)]+)\)/);
+    return (m ? cssVar(m[1]) : v).trim();
+  };
+
+  const fmt = (v,m)=> m==='PUE'?v.toFixed(2): (m==='Load Factor'? v+'%' : (v>=1000?(v/1000).toFixed(1)+'k':Number(v).toLocaleString()));
+
+  /* Cable++ helpers */
+  function shade(hex, p=0){
+    const m = hex.match(/^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i);
+    if(!m) return hex;
+    const rgb = m.slice(1).map(x=>parseInt(x,16));
+    const mix = rgb.map(v=> Math.round(v + (p>0 ? (255-v)*p : v*p)).toString(16).padStart(2,'0'));
+    return '#'+mix.join('');
+  }
+  function ensureGradient(defs, id, base){
+    if(defs.select('#'+id).node()) return '#'+id;
+    const g = defs.append('linearGradient')
+      .attr('id', id).attr('x1','0%').attr('y1','0%').attr('x2','100%').attr('y2','0%')
+      .attr('gradientTransform','rotate(35)');
+    g.append('stop').attr('offset','0%').attr('stop-color', shade(base, .28));
+    g.append('stop').attr('offset','40%').attr('stop-color', base);
+    g.append('stop').attr('offset','100%').attr('stop-color', shade(base, -.15));
+    return '#'+id;
+  }
+
+  let lockedScenario = null;
+
+  function build(){
+    const viz = document.getElementById('viz');
+
+    Object.entries(DATA).forEach(([metric, meta])=>{
+      const allVals = TYPES.flatMap(t =>
+        meta.data[t].flatMap(d=>[d.Observed,d['Lift-Off'],d['High Efficiency'],d.Headwinds].filter(v=>v!=null))
+      );
+      const yDomain = d3.extent(allVals);
+
+      const section = document.createElement('section');
+      section.className='group';
+      section.innerHTML = `<div class="canvas">
+          <div class="group-h">
+            <div class="group-title">${metric} <span class="group-unit">${meta.unit}</span></div>
+          </div>
+          <div class="grid"></div>
+        </div>`;
+      const grid = section.querySelector('.grid');
+
+      TYPES.forEach(type=>{
+        grid.appendChild(drawMini(metric, meta.unit, type, meta.data[type], yDomain));
+      });
+
+      viz.appendChild(section);
+    });
+  }
+
+  function drawMini(metricName, unit, typeName, series, yDomain){
+    const wrap = document.createElement('div');
+    wrap.className='mini'; wrap.dataset.type = typeName;
+    wrap.innerHTML = `<svg class="chart"></svg><div class="mini-foot"></div>`;
+
+    const svg = d3.select(wrap).select('svg').style('overflow','visible');
+    const defs = svg.append('defs');
+    defs.append('filter').attr('id','soften').append('feGaussianBlur').attr('stdDeviation',1.2);
+
+    const g = svg.append('g');
+
+    /* Layers */
+    const underlays = g.append('g');
+    const sheaths  = g.append('g');
+    const paths    = g.append('g');
+    const glosses  = g.append('g');
+    const marks    = g.append('g');
+    const jacks    = g.append('g');
+
+    const axX = g.append('g').attr('class','axis');
+    const axY = g.append('g').attr('class','axis');
+    const divider = g.append('line').attr('class','divider');
+
+    const x = d3.scaleLinear().domain([2020,2035]);
+    const y = d3.scaleLinear().domain(yDomain).nice();
+
+    /* Curves: monotone for OBS, Catmull–Rom (softer) for futures */
+    const lineObs = d3.line().x(d=>x(d.year)).y(d=>y(d.value)).curve(d3.curveMonotoneX);
+    const lineFut = d3.line().x(d=>x(d.year)).y(d=>y(d.value)).curve(d3.curveCatmullRom.alpha(0.65));
+
+    const SYM = {
+      'Observed': d3.symbol().type(d3.symbolCircle).size(44),
+      'Lift-Off': d3.symbol().type(d3.symbolSquare).size(52),
+      'High Efficiency': d3.symbol().type(d3.symbolTriangle).size(64),
+      'Headwinds': d3.symbol().type(d3.symbolDiamond).size(58)
+    };
+
+    function render(){
+      const W = cssNum('--mini');
+      const H = Math.round(cssNum('--mini') * cssNum('--mini-h'));
+      const m = {top:10,right:140,bottom:34,left:parseInt(getComputedStyle(document.documentElement).getPropertyValue('--axis-left'))};
+      svg.attr('width', W).attr('height', H + m.top + m.bottom);
+      g.attr('transform',`translate(${m.left},${m.top})`);
+      const w = W - m.left - m.right, h = H;
+      x.range([0,w]); y.range([h,0]);
+
+      axX.attr('transform',`translate(0,${h})`)
+        .call(d3.axisBottom(x).tickValues(tickYears).tickSize(3).tickPadding(4).tickFormat(String));
+
+      axY.call(d3.axisLeft(y).ticks(3).tickSize(3).tickFormat(d=>{
+        if(metricName==='PUE') return d.toFixed(1);
+        if(metricName==='Load Factor') return d+'%';
+        return d>=1000?(d/1000).toFixed(1)+'k':d;
+      }));
+
+      const dx = x(2024);
+      divider.attr('x1',dx).attr('x2',dx).attr('y1',0).attr('y2',h);
+
+      underlays.selectAll('*').remove();
+      sheaths.selectAll('*').remove();
+      paths.selectAll('*').remove();
+      glosses.selectAll('*').remove();
+      marks.selectAll('*').remove();
+      jacks.selectAll('*').remove();
+
+      const obs = series.filter(d=>d.Observed!=null).map(d=>({year:d.year, value:d.Observed}));
+      const base = series.find(d=>d.year===2024 && d.Observed!=null);
+      const col = resolveColor(TYPE_COLOR[typeName]);
+      const gradId = `grad-${metricName.replace(/\W/g,'')}-${typeName[0]}`;
+      const gradRef = ensureGradient(defs, gradId, col);
+
+      if(base){
+        jacks.append('rect').attr('x',dx-4).attr('y',y(base.Observed)-4).attr('width',8).attr('height',8)
+             .attr('fill','none').attr('stroke','#6C757D');
+      }
+
+      // OBS
+      if (obs.length){
+        underlays.append('path').datum(obs).attr('class','under obs').attr('d',lineObs)
+          .attr('stroke', col).attr('stroke-width',5.2).attr('transform','translate(0,0.6)');
+
+        const sh = sheaths.append('path').datum(obs).attr('class','sheath obs').attr('d',lineObs)
+          .attr('stroke', gradRef).attr('stroke-width',4.6);
+        animatePath(sh, 420, 0);
+
+        const pObs = paths.append('path').datum(obs).attr('class','core obs').attr('d',lineObs)
+          .attr('stroke', col).attr('data-scen','Observed');
+        animatePath(pObs, 560, 40);
+
+        glosses.append('path').datum(obs).attr('class','gloss obs').attr('d',lineObs)
+          .attr('stroke', '#fff').attr('stroke-width',2.0);
+
+        obs.filter(d=>d.year===2023 || d.year===2024).forEach(d=>{
+          const node = marks.append('path').attr('class','pt').attr('d', SYM['Observed']())
+            .attr('transform',`translate(${x(d.year)},${y(d.value)})`)
+            .attr('fill', col).attr('stroke','#0a0e14').attr('data-scen','Observed');
+          node.append('title').text(`${typeName} • ${metricName}\nObserved (OBS) ${d.year}: ${fmt(d.value, metricName)}`);
+        });
+      }
+
+      const foot = wrap.querySelector('.mini-foot'); foot.textContent=''; const pieces=[];
+      const cables=[]; const endOffset={'Lift-Off':-6,'High Efficiency':2,'Headwinds':10};
+
+      // FUTURES (Catmull–Rom softer)
+      [['Lift-Off','lo','LO'],['High Efficiency','he','HE'],['Headwinds','hw','HW']].forEach(([SC,klass,abbr], i)=>{
+        const arr = series.filter(d=>d[SC]!=null);
+        if(!arr.length || !base) return;
+        const seg = [{year:2024,value:base.Observed}, ...arr.map(d=>({year:d.year,value:d[SC]}))];
+
+        underlays.append('path').datum(seg).attr('class',`under ${klass}`).attr('d', lineFut)
+          .attr('stroke', col).attr('stroke-width',5.0).attr('transform','translate(0,0.6)');
+
+        const sh = sheaths.append('path').datum(seg).attr('class',`sheath ${klass}`).attr('d',lineFut)
+          .attr('stroke', gradRef).attr('stroke-width',4.4);
+        animatePath(sh, 720, 220 + i*160);
+
+        const p = paths.append('path').datum(seg).attr('class',`core ${klass}`).attr('d',lineFut)
+          .attr('stroke', col).attr('data-scen',SC).attr('data-type',typeName);
+        animatePath(p, 860, 260 + i*160);
+        cables.push(p);
+
+        glosses.append('path').datum(seg).attr('class',`gloss ${klass}`).attr('d', lineFut)
+          .attr('stroke', '#fff').attr('stroke-width',1.9);
+
+        arr.filter(d=>d.year===2030 || d.year===2035).forEach(d=>{
+          const node = marks.append('path').attr('class','pt').attr('d', SYM[SC]())
+            .attr('transform',`translate(${x(d.year)},${y(d[SC])})`)
+            .attr('fill', col).attr('stroke','#0a0e14').attr('data-scen',SC).attr('data-type',typeName);
+          node.append('title').text(`${typeName} • ${metricName}\n${SC} (${abbr}) ${d.year}: ${fmt(d[SC], metricName)}`);
+        });
+
+        /* OUTSIDE end label + leader */
+        const end = arr.find(d=>d.year===2035);
+        if(end){
+          const yEnd = y(end[SC]);
+          const xText = w + 14;                       // outside to the right
+          marks.append('line').attr('class','end-leader')
+            .attr('x1', x(2035)+2).attr('y1', yEnd)
+            .attr('x2', xText-6).attr('y2', yEnd)
+            .attr('stroke', col);
+          marks.append('text').attr('class','end')
+            .attr('x', xText).attr('y', yEnd + endOffset[SC])
+            .attr('dy','0.35em')
+            .attr('fill', col).attr('data-scen',SC).text(abbr);
+          const delta = end[SC] - base.Observed;
+          pieces.push(`${abbr} ${delta>=0?'+':''}${fmt(delta, metricName)}`);
+        }
+      });
+
+      if(pieces.length) foot.innerHTML = `<b>Δ 2035 vs 2024:</b> ${pieces.join(' · ')}`;
+
+      const tip = document.getElementById('tip');
+      marks.selectAll('.pt')
+        .on('mouseenter', function(){
+          const t = this.querySelector('title')?.textContent || '';
+          tip.textContent = t; tip.dataset.show='1';
+        })
+        .on('mouseleave', function(){
+          tip.dataset.show='0'; tip.style.transform='translate(-9999px,-9999px)';
+        });
+
+      cables.forEach(p=>{
+        p.on('mouseenter', function(){
+          if(lockedScenario) return;
+          const scen = this.getAttribute('data-scen');
+          highlightScenario(scen);
+          spawnPulse(g, d3.select(this), col);
+        }).on('mouseleave', function(){
+          if(lockedScenario) return;
+          clearHighlight(); killPulse(g);
+        }).on('click', function(){
+          const scen = this.getAttribute('data-scen');
+          toggleLock(scen, g, d3.select(this), col, wrap);
+        });
+      });
+    }
+
+    const ro = new ResizeObserver(render); ro.observe(wrap);
+    render();
+    return wrap;
+  }
+
+  function animatePath(pathSel, duration=800, delay=0){
+    const n = pathSel.node(); const L = n.getTotalLength();
+    pathSel.attr('stroke-dasharray', `${L} ${L}`).attr('stroke-dashoffset', L)
+      .transition().duration(duration).delay(delay).ease(d3.easeCubicOut)
+      .attr('stroke-dashoffset', 0)
+      .on('end', ()=> pathSel.attr('stroke-dasharray', null).attr('stroke-dashoffset', null));
+  }
+
+  function spawnPulse(g, pathSel, color){
+    killPulse(g);
+    const n = pathSel.node(); const L = n.getTotalLength();
+    const tip = document.getElementById('tip');
+    const pulse = g.append('circle').attr('class','pulse').attr('r',3.0).attr('fill',color);
+    function move(){
+      pulse.interrupt().transition().duration(1400).ease(d3.easeLinear)
+        .attrTween('transform', ()=>t=> {
+          const p = n.getPointAtLength( (0.001 + t)*L );
+          tip.style.transform = `translate(${p.x+24}px,${p.y+24}px)`;
+          return `translate(${p.x},${p.y})`;
+        })
+        .on('end', move);
+    }
+    move();
+  }
+  function killPulse(g){ g.selectAll('.pulse').interrupt().remove(); }
+
+  function highlightScenario(scen){
+    document.querySelectorAll('[data-scen]').forEach(el=>{
+      el.style.opacity = (el.getAttribute('data-scen')===scen) ? '1' : '0.22';
+    });
+  }
+  function highlightType(type){
+    document.querySelectorAll('.mini').forEach(el=>{
+      el.style.opacity = (el.dataset.type===type) ? '1' : '0.35';
+    });
+  }
+  function clearHighlight(){
+    document.querySelectorAll('[data-scen],[data-type],.mini').forEach(el=> el.style.opacity = '1');
+  }
+  function toggleLock(scen, g, pathSel, col, wrap){
+    if(lockedScenario===scen){
+      lockedScenario=null; wrap.classList.remove('locked'); clearHighlight(); killPulse(g);
+    }else{
+      lockedScenario=scen; document.querySelectorAll('.mini').forEach(w=>w.classList.remove('locked'));
+      wrap.classList.add('locked'); highlightScenario(scen); spawnPulse(g, pathSel, col);
+    }
+  }
+  document.addEventListener('keydown', e=>{
+    if(e.key==='Escape'){
+      lockedScenario=null;
+      document.querySelectorAll('.mini').forEach(w=>w.classList.remove('locked'));
+      clearHighlight(); d3.selectAll('.pulse').interrupt().remove();
+    }
+  });
+
+  build();
+
+  const legScen = document.getElementById('legend-scen');
+  legScen.querySelectorAll('[data-scen]').forEach(item=>{
+    item.addEventListener('mouseenter', ()=>{
+      if(lockedScenario) return;
+      const scen = item.dataset.scen;
+      highlightScenario(scen);
+      document.querySelectorAll(`path.core[data-scen="${scen}"]`).forEach((p,i)=>{
+        if(i<3){
+          const g = d3.select(p.parentNode.parentNode);
+          spawnPulse(g, d3.select(p), p.getAttribute('stroke'));
+        }
+      });
+    });
+    item.addEventListener('mouseleave', ()=>{
+      if(lockedScenario) return;
+      clearHighlight(); d3.selectAll('.pulse').interrupt().remove();
+    });
+    item.addEventListener('click', ()=>{
+      const scen = item.dataset.scen;
+      if(lockedScenario===scen){ lockedScenario=null; clearHighlight(); d3.selectAll('.pulse').interrupt().remove(); document.querySelectorAll('.mini').forEach(w=>w.classList.remove('locked')); }
+      else{
+        lockedScenario=scen; highlightScenario(scen);
+        document.querySelectorAll('.mini').forEach(w=>w.classList.add('locked'));
+      }
+    });
+  });
+
+  const legType = document.getElementById('legend-type');
+  legType.querySelectorAll('[data-type]').forEach(item=>{
+    item.addEventListener('mouseenter', ()=>{ if(!lockedScenario) highlightType(item.dataset.type); });
+    item.addEventListener('mouseleave', ()=>{ if(!lockedScenario) clearHighlight(); });
+  });
+
+  (function(){
+    const setActiveChip = (btn)=> {
+      document.querySelectorAll('.controls .chip').forEach(b=>b.classList.toggle('active', b===btn));
+    };
+    document.getElementById('focusAll').classList.add('active');
+
+    document.querySelectorAll('.controls .chip[data-scen], .controls .chip[data-focus="all"]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        setActiveChip(btn);
+        const scen = btn.dataset.scen;
+        if(!scen){
+          document.querySelectorAll('[data-scen],[data-type],.mini').forEach(el=> el.style.opacity='1');
+          return;
+        }
+        document.querySelectorAll('[data-scen]').forEach(el=>{
+          el.style.opacity = (el.getAttribute('data-scen')===scen) ? '1' : '0.18';
+        });
+      });
+    });
+
+    document.querySelectorAll('.controls input[data-type]').forEach(cb=>{
+      cb.addEventListener('change', ()=>{
+        const type = cb.dataset.type;
+        document.querySelectorAll(`.mini[data-type="${type}"]`).forEach(el=>{
+          el.style.display = cb.checked ? '' : 'none';
+        });
+      });
+    });
+
+    const key2scen = { '1':'Observed','2':'Lift-Off','3':'High Efficiency','4':'Headwinds','0':'ALL' };
+    document.addEventListener('keydown', e=>{
+      if(!key2scen[e.key]) return;
+      if(e.key==='0'){ document.getElementById('focusAll').click(); return; }
+      const btn = [...document.querySelectorAll('.controls .chip[data-scen]')].find(b=>b.dataset.scen===key2scen[e.key]);
+      btn?.click();
+    });
+
+    const tip = document.getElementById('tip');
+    document.addEventListener('mousemove', e=>{
+      if(tip.dataset.show==='1'){
+        tip.style.transform = `translate(${e.clientX+12}px,${e.clientY+12}px)`;
+      }
+    });
+  })();
+</script>
+</body>
+</html>
