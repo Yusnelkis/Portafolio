@@ -14,12 +14,14 @@ Feel free to explore and connect if anything inspires you.
 
 from pathlib import Path
 
-### 📊 Wiring the AI Era: Data Center Energy & Capacity, 2020–2035
+# 📊 Wiring the AI Era: Data Center Energy & Capacity, 2020–2035
 
 ## 🌍 Overview
 This project visualizes scenarios of **data center energy demand, capacity, efficiency (PUE)**, and load factors from **2020–2035**, in the context of the **AI era**.
 
 It uses data from the [IEA – Energy and AI](https://www.iea.org/data-and-statistics/data-product/energy-and-ai).
+
+![Wiring the AI Era: Data Center Energy & Capacity, 2020–2035](https://github.com/Yusnelkis/Portafolio/blob/main/Barcelona_Livability_Index/BCN%20Map%20livability%20Index_Clean.png)
 
 The design emphasizes **clarity, narrative, and usability**:
 - Strong, compact headline for impact.  
