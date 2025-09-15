@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python AI Libraries - Ultra Compact</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .chart-container {
+            width: 1400px;
+            height: 720px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            border: 2px solid #333;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 50px 5px 50px;
+            flex-shrink: 0;
+        }
+
+        .title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #ccc;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.2px;
+        }
+
+        .chart-description {
+            position: absolute;
+            top: 125px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .legend {
+            position: absolute;
+            top: 155px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            z-index: 10;
+        }
+
+        .legend-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            font-weight: 600;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 8px;
+            gap: 6px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .legend-foundation { background: #ff6b9d; }
+        .legend-ml { background: #00d4ff; }
+        .legend-deep { background: #ffd700; }
+        .legend-generative { background: #a855f7; }
+
+        .chart-area {
+            flex: 1;
+            margin: 0 30px 0px 30px;
+            position: relative;
+        }
+
+        .bubble {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.85;
+        }
+
+        .bubble:hover {
+            stroke-width: 2;
+            stroke: #ffffff;
+            opacity: 1;
+        }
+
+        .bubble-primary {
+            stroke: rgba(255,255,255,0.6);
+            stroke-width: 1.5;
+        }
+
+        .bubble-secondary {
+            stroke: rgba(255,255,255,0.3);
+            stroke-width: 1;
+            opacity: 0.7;
+        }
+
+        .bubble-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 7px;
+            font-weight: 600;
+            text-anchor: middle;
+            pointer-events: none;
+            fill: #ffffff;
+            opacity: 0.9;
+        }
+
+        .axis-line {
+            stroke: #444;
+            stroke-width: 1;
+        }
+
+        .axis-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            fill: #888;
+            text-anchor: middle;
+        }
+
+        .axis-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            fill: #ccc;
+            font-weight: 600;
+        }
+
+        .grid-line {
+            stroke: #333;
+            stroke-width: 0.5;
+            opacity: 0.3;
+        }
+
+        .inflection-line {
+            stroke: #ffffff;
+            stroke-width: 2;
+            stroke-dasharray: 10,5;
+            opacity: 0.8;
+        }
+
+        .inflection-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            font-weight: 600;
+            fill: #ffffff;
+            text-anchor: middle;
+        }
+
+        .narrative-annotation {
+            font-family: 'Inter', sans-serif;
+            pointer-events: none;
+        }
+
+        .narrative-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 600;
+            text-anchor: middle;
+            fill: #fff;
+        }
+
+        .narrative-text {
+            font-size: 10px;
+            text-anchor: middle;
+            line-height: 1.2;
+            fill: #ccc;
+        }
+
+        .narrative-connector {
+            stroke-width: 1;
+            opacity: 0.6;
+            stroke-dasharray: 3,3;
+            stroke: #888;
+        }
+
+        .narrative-bg {
+            fill: rgba(0, 0, 0, 0.7);
+            stroke: rgba(255, 255, 255, 0.15);
+            stroke-width: 1;
+            rx: 3;
+        }
+
+        /* Color coding */
+        .era-foundation { fill: #ff6b9d; }
+        .era-ml { fill: #00d4ff; }
+        .era-deep { fill: #ffd700; }
+        .era-generative { fill: #a855f7; }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 10px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            z-index: 1000;
+            max-width: 200px;
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .tooltip-content {
+            color: #ccc;
+            line-height: 1.3;
+            font-size: 9px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 30px 8px 30px;
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .source {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="header">
+            <h1 class="title">Python AI Libraries: The Journey from Foundation to Viral Dominance</h1>
+            <p class="subtitle">From slow foundations to viral adoption: the acceleration of AI innovation</p>
+        </div>
+
+        <div class="chart-description">
+            Bubble size = GitHub stars • X-axis = Release year • Y-axis = Adoption speed (time to mainstream adoption)
+        </div>
+
+        <div class="legend">
+            <div class="legend-title">// ERAS:</div>
+            <div class="legend-item">
+                <div class="legend-color legend-foundation"></div>
+                <span>Foundation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-ml"></div>
+                <span>ML Classic</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-deep"></div>
+                <span>Deep Learning</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-generative"></div>
+                <span>Generative AI</span>
+            </div>
+        </div>
+
+        <div class="chart-area" id="chart-area"></div>
+
+        <div class="footer">
+            <div class="source">
+                Data: GitHub Stars (2024), PyPI Downloads, Stack Overflow Developer Survey
+            </div>
+            <div class="logo">
+                By Yusnelkis Milanés Guisado
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dataset ampliado con más librerías relevantes
+        const libraries = [
+            // Foundation Era (2000-2006)
+            {name: "SciPy", year: 2001, githubStars: 12000, adoptionSpeed: 8.5, era: "foundation", priority: "secondary", downloads: "600M", description: "Scientific algorithms", manualX: 2001, manualY: 8.5},
+            {name: "Matplotlib", year: 2003, githubStars: 20000, adoptionSpeed: 9, era: "foundation", priority: "primary", downloads: "800M", description: "Visualization standard", manualX: 2003, manualY: 9.0},
+            {name: "NumPy", year: 2005, githubStars: 25000, adoptionSpeed: 8, era: "foundation", priority: "primary", downloads: "2.4B", description: "Scientific computing foundation", manualX: 2005, manualY: 8.0},
+            {name: "IPython", year: 2001, githubStars: 16000, adoptionSpeed: 7.5, era: "foundation", priority: "secondary", downloads: "300M", description: "Interactive computing", manualX: 2000.5, manualY: 7.5},
+
+            // ML Era (2007-2014)
+            {name: "Scikit-learn", year: 2007, githubStars: 60000, adoptionSpeed: 6, era: "ml", priority: "primary", downloads: "1.2B", description: "ML for everyone", manualX: 2007, manualY: 6.0},
+            {name: "Pandas", year: 2008, githubStars: 43000, adoptionSpeed: 5.5, era: "ml", priority: "primary", downloads: "1.8B", description: "Data manipulation powerhouse", manualX: 2008, manualY: 5.5},
+            {name: "Statsmodels", year: 2009, githubStars: 9000, adoptionSpeed: 7, era: "ml", priority: "secondary", downloads: "120M", description: "Statistical modeling", manualX: 2009, manualY: 7.2},
+            {name: "Seaborn", year: 2012, githubStars: 12000, adoptionSpeed: 4.5, era: "ml", priority: "secondary", downloads: "180M", description: "Statistical visualization", manualX: 2012, manualY: 4.3},
+            {name: "XGBoost", year: 2014, githubStars: 26000, adoptionSpeed: 3, era: "ml", priority: "primary", downloads: "200M", description: "Gradient boosting champion", manualX: 2014, manualY: 3.0},
+
+            // Deep Learning Era (2015-2018)
+            {name: "TensorFlow", year: 2015, githubStars: 185000, adoptionSpeed: 2, era: "deep", priority: "primary", downloads: "400M", description: "Google's DL framework", manualX: 2015, manualY: 2.0},
+            {name: "Keras", year: 2015, githubStars: 61000, adoptionSpeed: 2.5, era: "deep", priority: "primary", downloads: "180M", description: "High-level neural networks", manualX: 2015.8, manualY: 2.5},
+            {name: "PyTorch", year: 2017, githubStars: 180000, adoptionSpeed: 1.5, era: "deep", priority: "primary", downloads: "250M", description: "Research favorite", manualX: 2017, manualY: 1.5},
+            {name: "Fastai", year: 2018, githubStars: 26000, adoptionSpeed: 1.8, era: "deep", priority: "secondary", downloads: "40M", description: "Deep learning simplified", manualX: 2018, manualY: 1.8},
+
+            // Generative Era (2019-2024)
+            {name: "Transformers", year: 2019, githubStars: 150000, adoptionSpeed: 0.8, era: "generative", priority: "primary", downloads: "150M", description: "Pre-trained models hub", manualX: 2019, manualY: 0.8},
+            {name: "OpenAI", year: 2020, githubStars: 25000, adoptionSpeed: 1.2, era: "generative", priority: "secondary", downloads: "80M", description: "Official OpenAI client", manualX: 2020, manualY: 1.2},
+            {name: "Gradio", year: 2021, githubStars: 32000, adoptionSpeed: 0.9, era: "generative", priority: "secondary", downloads: "40M", description: "ML demo interfaces", manualX: 2021, manualY: 0.9},
+            {name: "LangChain", year: 2022, githubStars: 90000, adoptionSpeed: 0.3, era: "generative", priority: "primary", downloads: "50M", description: "LLM applications", manualX: 2022, manualY: 0.3},
+            {name: "LlamaIndex", year: 2022, githubStars: 35000, adoptionSpeed: 0.5, era: "generative", priority: "secondary", downloads: "30M", description: "Data framework for LLMs", manualX: 2022.8, manualY: 0.5},
+            {name: "Streamlit", year: 2019, githubStars: 33000, adoptionSpeed: 1.0, era: "generative", priority: "secondary", downloads: "60M", description: "Data app framework", manualX: 2019.5, manualY: 1.0},
+            {name: "Instructor", year: 2023, githubStars: 8000, adoptionSpeed: 0.1, era: "generative", priority: "secondary", downloads: "5M", description: "Structured LLM outputs", manualX: 2023, manualY: 0.1},
+            {name: "CrewAI", year: 2023, githubStars: 20000, adoptionSpeed: 0.2, era: "generative", priority: "secondary", downloads: "8M", description: "Multi-agent orchestration", manualX: 2023.5, manualY: 0.2}
+        ];
+
+        // Configuración ULTRA COMPACTA
+        const margin = {top: 125, right: 60, bottom: 8, left: 80};
+        const width = 1340 - margin.left - margin.right;
+        const height = 455 - margin.top - margin.bottom;
+
+        // Crear SVG
+        const svg = d3.select("#chart-area")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
+
+        const g = svg.append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Escalas
+        const xScale = d3.scaleLinear()
+            .domain([2000, 2024])
+            .range([0, width]);
+
+        const yScale = d3.scaleLinear()
+            .domain([10, 0])
+            .range([0, height]);
+
+        // Tamaños optimizados
+        const sizeScale = d3.scaleSqrt()
+            .domain([0, 200000])
+            .range([4, 20]);
+
+        // Usar posiciones manuales para evitar superposiciones
+        libraries.forEach(d => {
+            d.x = xScale(d.manualX);
+            d.y = yScale(d.manualY);
+        });
+
+        // Ejes
+        const xAxis = d3.axisBottom(xScale)
+            .ticks(6)
+            .tickFormat(d3.format("d"));
+
+        const yAxis = d3.axisLeft(yScale)
+            .ticks(5)
+            .tickFormat(d => {
+                if (d === 0) return "Viral";
+                if (d === 5) return "Fast";
+                if (d === 10) return "Slow";
+                return "";
+            });
+
+        g.append("g")
+            .attr("class", "x-axis")
+            .attr("transform", `translate(0,${height})`)
+            .call(xAxis)
+            .selectAll("text")
+            .style("fill", "#888")
+            .style("font-size", "10px");
+
+        g.append("g")
+            .attr("class", "y-axis")
+            .call(yAxis)
+            .selectAll("text")
+            .style("fill", "#888")
+            .style("font-size", "10px");
+
+        // Grillas
+        g.selectAll(".grid-line-x")
+            .data(xScale.ticks(6))
+            .enter().append("line")
+            .attr("class", "grid-line")
+            .attr("x1", d => xScale(d))
+            .attr("x2", d => xScale(d))
+            .attr("y1", 0)
+            .attr("y2", height);
+
+        g.selectAll(".grid-line-y")
+            .data(yScale.ticks(5))
+            .enter().append("line")
+            .attr("class", "grid-line")
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr("y1", d => yScale(d))
+            .attr("y2", d => yScale(d));
+
+        // Línea de inflexión
+        g.append("line")
+            .attr("class", "inflection-line")
+            .attr("x1", xScale(2015))
+            .attr("x2", xScale(2015))
+            .attr("y1", 0)
+            .attr("y2", height);
+
+        g.append("text")
+            .attr("class", "inflection-label")
+            .attr("x", xScale(2015))
+            .attr("y", -10)
+            .text("2015 INFLECTION POINT");
+
+        // Tooltip
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip");
+
+        // Burbujas optimizadas
+        const bubbles = g.selectAll(".bubble")
+            .data(libraries)
+            .enter().append("circle")
+            .attr("class", d => `bubble bubble-${d.priority} era-${d.era}`)
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
+            .attr("r", d => sizeScale(d.githubStars))
+            .on("mouseover", function(event, d) {
+                d3.select(this)
+                    .transition().duration(200)
+                    .attr("r", sizeScale(d.githubStars) + 3);
+
+                tooltip.transition().duration(200).style("opacity", 1);
+                tooltip.html(`
+                    <div class="tooltip-title">${d.name} (${d.year})</div>
+                    <div class="tooltip-content">
+                        <strong>GitHub Stars:</strong> ${d.githubStars.toLocaleString()}<br>
+                        <strong>Downloads:</strong> ${d.downloads}<br>
+                        <strong>Impact:</strong> ${d.description}
+                    </div>
+                `)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 10) + "px");
+            })
+            .on("mouseout", function(event, d) {
+                d3.select(this)
+                    .transition().duration(200)
+                    .attr("r", sizeScale(d.githubStars));
+                tooltip.transition().duration(200).style("opacity", 0);
+            });
+
+        // Narrativas más pequeñas para la versión compacta
+        const narratives = [
+            {
+                x: xScale(2003),
+                y: yScale(9.5),
+                title: "SLOW BUT SOLID",
+                text: ["Mathematical foundations", "built to last"],
+                era: "foundation",
+                width: 100,
+                height: 35,
+                targetX: xScale(2003),
+                targetY: yScale(8.8)
+            },
+            {
+                x: xScale(2010),
+                y: yScale(7.8),
+                title: "ML DEMOCRATIZATION", 
+                text: ["Scikit-learn changes", "the game completely"],
+                era: "ml",
+                width: 110,
+                height: 35,
+                targetX: xScale(2007),
+                targetY: yScale(6.0)
+            },
+            {
+                x: xScale(2016),
+                y: yScale(4.2),
+                title: "DEEP LEARNING BOOM",
+                text: ["TensorFlow vs PyTorch", "battle begins"],
+                era: "deep",
+                width: 115,
+                height: 35,
+                targetX: xScale(2016),
+                targetY: yScale(2.2)
+            },
+            {
+                x: xScale(2022.5),
+                y: yScale(1.8),
+                title: "GENERATIVE EXPLOSION",
+                text: ["From research to viral", "in months, not years"],
+                era: "generative",
+                width: 110,
+                height: 35,
+                targetX: xScale(2022),
+                targetY: yScale(0.3)
+            }
+        ];
+
+        // Añadir narrativas
+        narratives.forEach(narrative => {
+            const annotation = g.append("g")
+                .attr("class", `narrative-annotation narrative-${narrative.era}`);
+
+            annotation.append("rect")
+                .attr("class", "narrative-bg")
+                .attr("x", narrative.x - narrative.width/2)
+                .attr("y", narrative.y - narrative.height/2)
+                .attr("width", narrative.width)
+                .attr("height", narrative.height);
+
+            // Línea conectora
+            annotation.append("line")
+                .attr("class", "narrative-connector")
+                .attr("x1", narrative.x)
+                .attr("y1", narrative.y + narrative.height/2)
+                .attr("x2", narrative.targetX)
+                .attr("y2", narrative.targetY);
+
+            // Título (12px)
+            annotation.append("text")
+                .attr("class", "narrative-title")
+                .attr("x", narrative.x)
+                .attr("y", narrative.y - 8)
+                .text(narrative.title);
+
+            // Texto (10px)
+            narrative.text.forEach((line, i) => {
+                annotation.append("text")
+                    .attr("class", "narrative-text")
+                    .attr("x", narrative.x)
+                    .attr("y", narrative.y + 3 + (i * 10))
+                    .text(line);
+            });
+        });
+
+        // Etiquetas para TODAS las librerías
+        g.selectAll(".bubble-label")
+            .data(libraries)
+            .enter().append("text")
+            .attr("class", "bubble-label")
+            .attr("x", d => d.x)
+            .attr("y", d => d.y + sizeScale(d.githubStars) + 9)
+            .text(d => d.name);
+
+        // Animaciones suaves
+        bubbles.style("opacity", 0)
+            .attr("r", 0)
+            .transition()
+            .duration(1000)
+            .delay((d, i) => i * 50)
+            .style("opacity", d => d.priority === "primary" ? 0.9 : 0.7)
+            .attr("r", d => sizeScale(d.githubStars));
+
+        g.selectAll(".narrative-annotation")
+            .style("opacity", 0)
+            .transition()
+            .duration(800)
+            .delay(400)
+            .style("opacity", 1);
+
+        g.selectAll(".bubble-label")
+            .style("opacity", 0)
+            .transition()
+            .duration(800)
+            .delay((d, i) => i * 50 + 200)
+            .style("opacity", 1);
+
+    </script>
+</body>
+</html>
