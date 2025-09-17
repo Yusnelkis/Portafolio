@@ -55,14 +55,6 @@ The design emphasizes **clarity, narrative, and usability**:
 - **JetBrains Mono & Inter fonts** → clear separation of data (mono) vs narrative (sans).  
 - No heavy framework: built as a **lightweight standalone app** for maximum portability.  
 
----
-
-## 🚀 How to Run
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/energy-ai-datacenters.git
-   cd energy-ai-datacenters
-
 
 # 🏙️ Barcelona Livability Index
 
@@ -100,9 +92,11 @@ Multi-criteria analysis evaluating livability across 8 Barcelona districts based
 
 # AI Python libraries.
 
-Link interactive data viz [tashapiro](https://github.com/tashapiro/TidyTuesday/commits?author=tashapiro)
+Link interactive data viz [AIPuyhonlibraries](https://yusnelkis.github.io/AIPythonlibraries/)
 
 ![Ai python](https://github.com/Yusnelkis/Portafolio/blob/main/AI%20PYTHON%20LIBRARIES/Ai%20pyhton%20libraries.PNG))
+
+Data scources: GitHUB starts, llMS. 
 
 # Survivalschart
 
