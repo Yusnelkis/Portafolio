@@ -1,5 +1,3 @@
-# Portafolio
-
 Welcome to my data science and data visualization portfolio. Here, I share a selection of personal projects, mainly focused on data visualization, machine learning, and occasionally deep learning.
 
 These projects are built using open datasets or curated data sources that spark analytical interest. My goals are:
