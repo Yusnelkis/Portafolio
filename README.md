@@ -28,30 +28,20 @@ The design emphasizes **clarity, narrative, and usability**:
 - Metrics defined in plain language for non-technical audiences.  
 - Interactive filtering to explore scenarios without clutter.  
 
-
-## ✨ Features
-- **Interactive filters** → toggle between scenario lines and data center types.  
-- **Legend-first design** → consistent color and line codes.  
-- **Responsive layout** → optimized for both desktop and mobile.  
-- **Clean export** → designed to be shared as image or PDF.  
-- **Information design principles applied**: hierarchy, minimal redundancy, storytelling.  
-
----
-
-## 📏 Metrics (in plain words)
-- **Consumption** = Annual electricity demand (TWh)  
-- **Capacity** = Installed data center capacity (GW)  
-- **Load factor** = Average utilization of capacity (%)  
-- **PUE** = Power Usage Effectiveness (efficiency ratio)  
-
----
-
 ## 🛠️ Technology Stack
 - **HTML5 / CSS3** → responsive structure & layout.  
 - **JavaScript (ES6+)** → interactivity and filtering.  
 - **[D3.js](https://d3js.org/)** → data-driven charts and dynamic visualization.  
 - **JetBrains Mono & Inter fonts** → clear separation of data (mono) vs narrative (sans).  
-- No heavy framework: built as a **lightweight standalone app** for maximum portability.  
+- No heavy framework: built as a **lightweight standalone app** for maximum portability.
+
+# What customer love ?
+
+A data visualization designed to synthesize insights from 1,300+ customer responses, highlighting strengths, mixed performance areas, and critical pain points.
+Each metric is represented with a proportional semicircle and a central percentage, reinforced by a clear label (“POSITIVE” / “NEGATIVE”) to indicate the dominant sentiment.
+The three-block structure (Strengths – Mixed Performance – Needs Attention) enables quick scanning to identify what drives satisfaction and what threatens retention.
+
+Goal: create a modular, scalable, and easy-to-interpret visual model for executive reports and customer experience analysis.
 
 
 # 🏙️ Barcelona Livability Index
