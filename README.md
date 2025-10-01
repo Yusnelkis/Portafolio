@@ -43,6 +43,7 @@ The three-block structure (Strengths – Mixed Performance – Needs Attention) 
 
 Goal: create a modular, scalable, and easy-to-interpret visual model for executive reports and customer experience analysis.
 
+![What customer love ?](https://github.com/Yusnelkis/Portafolio/blob/main/WHAT%20CUSTOMER%20LOVE/Customer%20project.png)
 
 # 🏙️ Barcelona Livability Index
 
