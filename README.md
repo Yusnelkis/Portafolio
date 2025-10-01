@@ -10,8 +10,6 @@ And most importantly, to enjoy the learning journey 🚀
 
 Feel free to explore and connect if anything inspires you.
 
-from pathlib import Path
-
 # 📊 Wiring the AI Era: Data Center Energy & Capacity, 2020–2035
 
 ## 🌍 Overview
@@ -35,6 +33,8 @@ The design emphasizes **clarity, narrative, and usability**:
 - **JetBrains Mono & Inter fonts** → clear separation of data (mono) vs narrative (sans).  
 - No heavy framework: built as a **lightweight standalone app** for maximum portability.
 
+- Note: The design was crafted with the support of generative AI tools to explore visual options and accelerate the creative process.
+
 # What customer love ?
 
 A data visualization designed to synthesize insights from 1,300+ customer responses, highlighting strengths, mixed performance areas, and critical pain points.
@@ -42,6 +42,8 @@ Each metric is represented with a proportional semicircle and a central percenta
 The three-block structure (Strengths – Mixed Performance – Needs Attention) enables quick scanning to identify what drives satisfaction and what threatens retention.
 
 Goal: create a modular, scalable, and easy-to-interpret visual model for executive reports and customer experience analysis.
+
+Note: The design was crafted with the support of generative AI tools to explore visual options and accelerate the creative process.
 
 ![What customer love ?](https://github.com/Yusnelkis/Portafolio/blob/main/WHAT%20CUSTOMER%20LOVE/Customer%20project.png)
 
@@ -86,6 +88,7 @@ Link interactive data viz [AIPuyhonlibraries](https://yusnelkis.github.io/AIPyth
 ![Ai python](https://github.com/Yusnelkis/Portafolio/blob/main/AI%20PYTHON%20LIBRARIES/Ai%20pyhton%20libraries.PNG))
 
 Data scources: GitHUB starts, llMS. 
+Note: The design was crafted with the support of generative AI tools to explore visual options and accelerate the creative process.
 
 # Survivalschart
 
