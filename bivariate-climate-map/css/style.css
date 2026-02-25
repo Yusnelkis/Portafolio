@@ -211,6 +211,7 @@ header .subtitle {
 }
 
 .meta-inline { font-weight: 500; }
+.note { font-style: italic; }
 .sep { margin: 0 0.05rem; }
 
 .credit {

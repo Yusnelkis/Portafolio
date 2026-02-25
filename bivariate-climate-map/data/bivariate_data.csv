@@ -77,53 +77,53 @@ DK02,DNK,Denmark,Sjælland,6413.21,9963.66,849857,7.55,-35.6
 DK03,DNK,Denmark,Syddanmark,11121.12,13124.19,1237413,8.99,-15.3
 DK04,DNK,Denmark,Midtjylland,10540.34,13153.94,1358879,7.76,-19.9
 DK05,DNK,Denmark,Nordjylland,8673.07,10141.92,594634,14.59,-14.5
-ES11,ESP,Spain and Andorra,Galicia,17014.06,22560.25,2699424,6.3,-24.6
-ES12,ESP,Spain and Andorra,Principado de Asturias,10412.49,19549.2,1006060,10.35,-46.7
-ES13,ESP,Spain and Andorra,Cantabria,3745.45,4349.59,588387,6.37,-13.9
-ES21,ESP,Spain and Andorra,País Vasco,13236.71,15485.4,2216302,5.97,-14.5
-ES22,ESP,Spain and Andorra,Comunidad Foral de Navarra,5770.69,6084.31,672155,8.59,-5.2
-ES23,ESP,Spain and Andorra,La Rioja,2204.19,2237.92,322282,6.84,-1.5
-ES24,ESP,Spain and Andorra,Aragón,14258.98,18074.7,1341289,10.63,-21.1
-ES30,ESP,Spain and Andorra,Comunidad de Madrid,14344.1,15980.48,6871903,2.09,-10.2
-ES41,ESP,Spain and Andorra,Castilla y León,27204.3,36696.92,2383703,11.41,-25.9
-ES42,ESP,Spain and Andorra,Castilla-La Mancha,22859.37,28180.88,2084086,10.97,-18.9
-ES43,ESP,Spain and Andorra,Extremadura,8180.08,8351.09,1054306,7.76,-2.0
-ES51,ESP,Spain and Andorra,Cataluña,36901.63,37544.78,7901963,4.67,-1.7
-ES52,ESP,Spain and Andorra,Comunitat Valenciana,22141.33,25147.26,5216195,4.24,-12.0
-ES53,ESP,Spain and Andorra,Illes Balears,6096.25,7696.5,1209906,5.04,-20.8
-ES61,ESP,Spain and Andorra,Andalucía,47279.54,60024.55,8584147,5.51,-21.2
-ES62,ESP,Spain and Andorra,Región de Murcia,11819.67,12495.41,1551692,7.62,-5.4
-ES63,ESP,Spain and Andorra,Ciudad de Ceuta,184.78,254.1,83052,2.22,-27.3
-ES64,ESP,Spain and Andorra,Ciudad de Melilla,120.11,162.02,85493,1.4,-25.9
-ES70,ESP,Spain and Andorra,Canarias,10090.12,12293.85,2213016,4.56,-17.9
+ES11,ESP,Spain,Galicia,17014.06,22560.25,2699424,6.3,-24.6
+ES12,ESP,Spain,Principado de Asturias,10412.49,19549.2,1006060,10.35,-46.7
+ES13,ESP,Spain,Cantabria,3745.45,4349.59,588387,6.37,-13.9
+ES21,ESP,Spain,País Vasco,13236.71,15485.4,2216302,5.97,-14.5
+ES22,ESP,Spain,Comunidad Foral de Navarra,5770.69,6084.31,672155,8.59,-5.2
+ES23,ESP,Spain,La Rioja,2204.19,2237.92,322282,6.84,-1.5
+ES24,ESP,Spain,Aragón,14258.98,18074.7,1341289,10.63,-21.1
+ES30,ESP,Spain,Comunidad de Madrid,14344.1,15980.48,6871903,2.09,-10.2
+ES41,ESP,Spain,Castilla y León,27204.3,36696.92,2383703,11.41,-25.9
+ES42,ESP,Spain,Castilla-La Mancha,22859.37,28180.88,2084086,10.97,-18.9
+ES43,ESP,Spain,Extremadura,8180.08,8351.09,1054306,7.76,-2.0
+ES51,ESP,Spain,Cataluña,36901.63,37544.78,7901963,4.67,-1.7
+ES52,ESP,Spain,Comunitat Valenciana,22141.33,25147.26,5216195,4.24,-12.0
+ES53,ESP,Spain,Illes Balears,6096.25,7696.5,1209906,5.04,-20.8
+ES61,ESP,Spain,Andalucía,47279.54,60024.55,8584147,5.51,-21.2
+ES62,ESP,Spain,Región de Murcia,11819.67,12495.41,1551692,7.62,-5.4
+ES63,ESP,Spain,Ciudad de Ceuta,184.78,254.1,83052,2.22,-27.3
+ES64,ESP,Spain,Ciudad de Melilla,120.11,162.02,85493,1.4,-25.9
+ES70,ESP,Spain,Canarias,10090.12,12293.85,2213016,4.56,-17.9
 EE00,EST,Estonia,Eesti,14336.05,26585.05,1365884,10.5,-46.1
 FI19,FIN,Finland,Länsi-Suomi,11599.5,18139.01,1384761,8.38,-36.1
 FI1B,FIN,Finland,Helsinki-Uusimaa,9704.65,18219.12,1733033,5.6,-46.7
 FI1C,FIN,Finland,Etelä-Suomi,10691.12,16693.55,1144473,9.34,-36.0
 FI1D,FIN,Finland,Pohjois- ja Itä-Suomi,10950.16,14184.9,1271344,8.61,-22.8
 FI20,FIN,Finland,Aland,66.78,86.48,30359,2.2,-22.8
-FR10,FRA,France and Monaco,Ile-de-France,29481.48,42335.84,12407359,2.38,-30.4
-FRB0,FRA,France and Monaco,Centre — Val de Loire,18191.6,21786.79,2581716,7.05,-16.5
-FRC1,FRA,France and Monaco,Bourgogne,11481.43,14480.03,1619967,7.09,-20.7
-FRC2,FRA,France and Monaco,Franche-Comté,6735.45,8056.08,1180267,5.71,-16.4
-FRD1,FRA,France and Monaco,Basse-Normandie,10028.36,11925.57,1477731,6.79,-15.9
-FRD2,FRA,France and Monaco,Haute-Normandie,14673.08,25194.04,1861791,7.88,-41.8
-FRE1,FRA,France and Monaco,Nord-Pas de Calais,31770.07,41029.55,4073012,7.8,-22.6
-FRE2,FRA,France and Monaco,Picardie,15222.5,18467.01,1917280,7.94,-17.6
-FRF1,FRA,France and Monaco,Alsace,10007.39,13110.66,1927888,5.19,-23.7
-FRF2,FRA,France and Monaco,Champagne-Ardenne,13261.01,15529.33,1308276,10.14,-14.6
-FRF3,FRA,France and Monaco,Lorraine,23008.04,32717.48,2318308,9.92,-29.7
-FRG0,FRA,France and Monaco,Pays de la Loire,27880.32,35751.79,3898424,7.15,-22.0
-FRH0,FRA,France and Monaco,Bretagne,31011.09,36335.65,3440248,9.01,-14.7
-FRI1,FRA,France and Monaco,Aquitaine,17766.57,21936.42,3575256,4.97,-19.0
-FRI2,FRA,France and Monaco,Limousin,5549.28,6597.99,726934,7.63,-15.9
-FRI3,FRA,France and Monaco,Poitou-Charentes,13720.55,16420.14,1836624,7.47,-16.4
-FRJ1,FRA,France and Monaco,Languedoc-Roussillon,14019.85,16229.81,2948904,4.75,-13.6
-FRJ2,FRA,France and Monaco,Midi-Pyrénées,17360.1,20490.25,3172349,5.47,-15.3
-FRK1,FRA,France and Monaco,Auvergne,10066.01,12035.45,1370396,7.35,-16.4
-FRK2,FRA,France and Monaco,Rhône-Alpes,30379.41,37433.16,6826040,4.45,-18.8
-FRL0,FRA,France and Monaco,Provence-Alpes-Côte d’Azur,25196.71,34280.87,5194349,4.85,-26.5
-FRM0,FRA,France and Monaco,Corse,1973.35,2084.27,354266,5.57,-5.3
+FR10,FRA,France,Ile-de-France,29481.48,42335.84,12407359,2.38,-30.4
+FRB0,FRA,France,Centre — Val de Loire,18191.6,21786.79,2581716,7.05,-16.5
+FRC1,FRA,France,Bourgogne,11481.43,14480.03,1619967,7.09,-20.7
+FRC2,FRA,France,Franche-Comté,6735.45,8056.08,1180267,5.71,-16.4
+FRD1,FRA,France,Basse-Normandie,10028.36,11925.57,1477731,6.79,-15.9
+FRD2,FRA,France,Haute-Normandie,14673.08,25194.04,1861791,7.88,-41.8
+FRE1,FRA,France,Nord-Pas de Calais,31770.07,41029.55,4073012,7.8,-22.6
+FRE2,FRA,France,Picardie,15222.5,18467.01,1917280,7.94,-17.6
+FRF1,FRA,France,Alsace,10007.39,13110.66,1927888,5.19,-23.7
+FRF2,FRA,France,Champagne-Ardenne,13261.01,15529.33,1308276,10.14,-14.6
+FRF3,FRA,France,Lorraine,23008.04,32717.48,2318308,9.92,-29.7
+FRG0,FRA,France,Pays de la Loire,27880.32,35751.79,3898424,7.15,-22.0
+FRH0,FRA,France,Bretagne,31011.09,36335.65,3440248,9.01,-14.7
+FRI1,FRA,France,Aquitaine,17766.57,21936.42,3575256,4.97,-19.0
+FRI2,FRA,France,Limousin,5549.28,6597.99,726934,7.63,-15.9
+FRI3,FRA,France,Poitou-Charentes,13720.55,16420.14,1836624,7.47,-16.4
+FRJ1,FRA,France,Languedoc-Roussillon,14019.85,16229.81,2948904,4.75,-13.6
+FRJ2,FRA,France,Midi-Pyrénées,17360.1,20490.25,3172349,5.47,-15.3
+FRK1,FRA,France,Auvergne,10066.01,12035.45,1370396,7.35,-16.4
+FRK2,FRA,France,Rhône-Alpes,30379.41,37433.16,6826040,4.45,-18.8
+FRL0,FRA,France,Provence-Alpes-Côte d’Azur,25196.71,34280.87,5194349,4.85,-26.5
+FRM0,FRA,France,Corse,1973.35,2084.27,354266,5.57,-5.3
 EL30,GRC,Greece,Attiki,13536.05,14462.99,3795536,3.57,-6.4
 EL41,GRC,Greece,Voreio Aigaio,775.28,812.52,194784,3.98,-4.6
 EL42,GRC,Greece,Notio Aigaio,1857.05,1664.02,326841,5.68,11.6
@@ -152,27 +152,27 @@ HU33,HUN,Hungary,Dél-Alföld,7394.46,6604.8,1200150,6.16,12.0
 IE04,IRL,Ireland,Northern and Western,12631.47,12685.28,930208,13.58,-0.4
 IE05,IRL,Ireland,Southern,26557.54,30464.91,1741180,15.25,-12.8
 IE06,IRL,Ireland,Eastern and Midland,18354.91,19460.13,2600007,7.06,-5.7
-ITC1,ITA,"Italy, San Marino and the Holy See",Piemonte,29536.17,32527.27,4251351,6.95,-9.2
-ITC2,ITA,"Italy, San Marino and the Holy See",Valle d’Aosta/Vallée d’Aoste,953.07,1059.3,123130,7.74,-10.0
-ITC3,ITA,"Italy, San Marino and the Holy See",Liguria,6630.08,15928.15,1507636,4.4,-58.4
-ITC4,ITA,"Italy, San Marino and the Holy See",Lombardia,59386.5,64263.69,9976509,5.95,-7.6
-ITF1,ITA,"Italy, San Marino and the Holy See",Abruzzo,8758.85,9498.24,1272627,6.88,-7.8
-ITF2,ITA,"Italy, San Marino and the Holy See",Molise,3139.49,3502.39,290636,10.8,-10.4
-ITF3,ITA,"Italy, San Marino and the Holy See",Campania,16184.21,17910.44,5609536,2.89,-9.6
-ITF4,ITA,"Italy, San Marino and the Holy See",Puglia,26446.52,37787.5,3907683,6.77,-30.0
-ITF5,ITA,"Italy, San Marino and the Holy See",Basilicata,5119.29,5952.73,537577,9.52,-14.0
-ITF6,ITA,"Italy, San Marino and the Holy See",Calabria,10548.98,11649.98,1846610,5.71,-9.5
-ITG1,ITA,"Italy, San Marino and the Holy See",Sicilia,25726.07,29065.61,4814016,5.34,-11.5
-ITG2,ITA,"Italy, San Marino and the Holy See",Sardegna,19097.85,22530.07,1578146,12.1,-15.2
-ITH1,ITA,"Italy, San Marino and the Holy See",Provincia Autonoma di Bolzano/Bozen,2905.25,3117.83,534147,5.44,-6.8
-ITH2,ITA,"Italy, San Marino and the Holy See",Provincia Autonoma di Trento,3644.47,3610.04,542996,6.71,1.0
-ITH3,ITA,"Italy, San Marino and the Holy See",Veneto,34655.71,43938.33,4849553,7.15,-21.1
-ITH4,ITA,"Italy, San Marino and the Holy See",Friuli-Venezia Giulia,11234.21,12121.03,1194248,9.41,-7.3
-ITH5,ITA,"Italy, San Marino and the Holy See",Emilia-Romagna,33862.16,37624.43,4437578,7.63,-10.0
-ITI1,ITA,"Italy, San Marino and the Holy See",Toscana,18424.78,20752.59,3661981,5.03,-11.2
-ITI2,ITA,"Italy, San Marino and the Holy See",Umbria,6314.63,7833.85,856407,7.37,-19.4
-ITI3,ITA,"Italy, San Marino and the Holy See",Marche,7241.58,7630.22,1484298,4.88,-5.1
-ITI4,ITA,"Italy, San Marino and the Holy See",Lazio,39571.11,48356.24,5720536,6.92,-18.2
+ITC1,ITA,Italy,Piemonte,29536.17,32527.27,4251351,6.95,-9.2
+ITC2,ITA,Italy,Valle d’Aosta/Vallée d’Aoste,953.07,1059.3,123130,7.74,-10.0
+ITC3,ITA,Italy,Liguria,6630.08,15928.15,1507636,4.4,-58.4
+ITC4,ITA,Italy,Lombardia,59386.5,64263.69,9976509,5.95,-7.6
+ITF1,ITA,Italy,Abruzzo,8758.85,9498.24,1272627,6.88,-7.8
+ITF2,ITA,Italy,Molise,3139.49,3502.39,290636,10.8,-10.4
+ITF3,ITA,Italy,Campania,16184.21,17910.44,5609536,2.89,-9.6
+ITF4,ITA,Italy,Puglia,26446.52,37787.5,3907683,6.77,-30.0
+ITF5,ITA,Italy,Basilicata,5119.29,5952.73,537577,9.52,-14.0
+ITF6,ITA,Italy,Calabria,10548.98,11649.98,1846610,5.71,-9.5
+ITG1,ITA,Italy,Sicilia,25726.07,29065.61,4814016,5.34,-11.5
+ITG2,ITA,Italy,Sardegna,19097.85,22530.07,1578146,12.1,-15.2
+ITH1,ITA,Italy,Provincia Autonoma di Bolzano/Bozen,2905.25,3117.83,534147,5.44,-6.8
+ITH2,ITA,Italy,Provincia Autonoma di Trento,3644.47,3610.04,542996,6.71,1.0
+ITH3,ITA,Italy,Veneto,34655.71,43938.33,4849553,7.15,-21.1
+ITH4,ITA,Italy,Friuli-Venezia Giulia,11234.21,12121.03,1194248,9.41,-7.3
+ITH5,ITA,Italy,Emilia-Romagna,33862.16,37624.43,4437578,7.63,-10.0
+ITI1,ITA,Italy,Toscana,18424.78,20752.59,3661981,5.03,-11.2
+ITI2,ITA,Italy,Umbria,6314.63,7833.85,856407,7.37,-19.4
+ITI3,ITA,Italy,Marche,7241.58,7630.22,1484298,4.88,-5.1
+ITI4,ITA,Italy,Lazio,39571.11,48356.24,5720536,6.92,-18.2
 LT01,LTU,Lithuania,Sostinės regionas,3625.96,4479.62,848724,4.27,-19.1
 LT02,LTU,Lithuania,Vidurio ir vakarų Lietuvos regionas,17041.88,17919.21,2008555,8.48,-4.9
 LU00,LUX,Luxembourg,Luxembourg,7859.97,11267.93,660809,11.89,-30.2
@@ -208,13 +208,10 @@ PL92,POL,Poland,Mazowiecki regionalny,40144.97,37613.84,2210253,18.16,6.7
 PT11,PRT,Portugal,Norte,12052.7,12084.98,3640294,3.31,-0.3
 PT15,PRT,Portugal,Algarve,2160.4,1957.22,478618,4.51,10.4
 PT19,PRT,Portugal,Centro (PT),11781.5,10928.38,1672267,7.05,7.8
-PT1A,PRT,Portugal,"Grande Lisboa
-",5039.85,5321.14,2097742,2.4,-5.3
-PT1B,PRT,Portugal,"Península de Setúbal
-",3449.67,3940.86,823822,4.19,-12.5
+PT1A,PRT,Portugal,Grande Lisboa,5039.85,5321.14,2097742,2.4,-5.3
+PT1B,PRT,Portugal,Península de Setúbal,3449.67,3940.86,823822,4.19,-12.5
 PT1C,PRT,Portugal,Alentejo,7467.83,15238.3,472735,15.8,-51.0
-PT1D,PRT,Portugal,"Oeste e Vale do Tejo
-",8332.81,10412.83,836948,9.96,-20.0
+PT1D,PRT,Portugal,Oeste e Vale do Tejo,8332.81,10412.83,836948,9.96,-20.0
 PT20,PRT,Portugal,Região Autónoma dos Açores,1213.99,1216.25,240125,5.06,-0.2
 PT30,PRT,Portugal,Região Autónoma da Madeira,819.97,786.31,254070,3.23,4.3
 RO11,ROU,Romania,Nord-Vest,11439.69,9694.6,2531913,4.52,18.0
