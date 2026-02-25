@@ -1,0 +1,241 @@
+nuts_id,country_iso,country,name,ghg_2023_kt,ghg_2013_kt,population_2023,ghg_per_capita_t,pct_change_2013_2023
+AT11,AUT,Austria,Burgenland,2249.89,2477.34,301250,7.47,-9.2
+AT12,AUT,Austria,Niederösterreich,18347.89,23480.18,1718373,10.68,-21.9
+AT13,AUT,Austria,Wien,4353.41,4662.15,1982097,2.2,-6.6
+AT21,AUT,Austria,Kärnten,5328.54,5865.87,568984,9.37,-9.2
+AT22,AUT,Austria,Steiermark,13714.36,15973.0,1265198,10.84,-14.1
+AT31,AUT,Austria,Oberösterreich,18808.35,20991.55,1522825,12.35,-10.4
+AT32,AUT,Austria,Salzburg,3893.34,4284.14,568346,6.85,-9.1
+AT33,AUT,Austria,Tirol,4247.9,4723.81,771304,5.51,-10.1
+AT34,AUT,Austria,Vorarlberg,1807.14,2033.92,406395,4.45,-11.2
+BE10,BEL,Belgium,Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest,2876.24,3715.56,1253178,2.3,-22.6
+BE21,BEL,Belgium,Prov. Antwerpen,15786.68,17956.42,1915921,8.24,-12.1
+BE22,BEL,Belgium,Prov. Limburg (BE),5966.51,9237.91,898619,6.64,-35.4
+BE23,BEL,Belgium,Prov. Oost-Vlaanderen,17613.97,21016.82,1563346,11.27,-16.2
+BE24,BEL,Belgium,Prov. Vlaams-Brabant,7762.86,9175.39,1188079,6.53,-15.4
+BE25,BEL,Belgium,Prov. West-Vlaanderen,10104.88,11895.99,1222004,8.27,-15.1
+BE31,BEL,Belgium,Prov. Brabant wallon,2704.69,3127.42,413959,6.53,-13.5
+BE32,BEL,Belgium,Prov. Hainaut,22464.28,26172.97,1361026,16.51,-14.2
+BE33,BEL,Belgium,Prov. Liège,11089.21,14508.93,1122360,9.88,-23.6
+BE34,BEL,Belgium,Prov. Luxembourg (BE),3744.06,4215.03,297654,12.58,-11.2
+BE35,BEL,Belgium,Prov. Namur,5868.26,7314.52,506650,11.58,-19.8
+BG31,BGR,Bulgaria,Severozapaden,5412.45,5061.88,671502,8.06,6.9
+BG32,BGR,Bulgaria,Severen tsentralen,4850.42,4707.81,686334,7.07,3.0
+BG33,BGR,Bulgaria,Severoiztochen,8406.73,10951.9,823884,10.2,-23.2
+BG34,BGR,Bulgaria,Yugoiztochen,18522.68,20548.16,948410,19.53,-9.9
+BG41,BGR,Bulgaria,Yugozapaden,9943.56,10060.32,2016554,4.93,-1.2
+BG42,BGR,Bulgaria,Yuzhen tsentralen,6210.33,5981.28,1301026,4.77,3.8
+CY00,CYP,Cyprus,Kýpros,10313.93,7891.64,949084,10.87,30.7
+CZ01,CZE,Czechia,Praha,4906.63,5383.52,1357326,3.61,-8.9
+CZ02,CZE,Czechia,Střední Čechy,14662.54,18726.32,1439391,10.19,-21.7
+CZ03,CZE,Czechia,Jihozápad,11567.32,12424.07,1257691,9.2,-6.9
+CZ04,CZE,Czechia,Severozápad,31673.45,37729.9,1105932,28.64,-16.1
+CZ05,CZE,Czechia,Severovýchod,16800.82,18995.65,1533205,10.96,-11.6
+CZ06,CZE,Czechia,Jihovýchod,13651.95,14430.4,1731977,7.88,-5.4
+CZ07,CZE,Czechia,Střední Morava,8155.87,8558.17,1212333,6.73,-4.7
+CZ08,CZE,Czechia,Moravskoslezsko,12843.36,17625.18,1189674,10.8,-27.1
+DE11,DEU,Germany,Stuttgart,23939.89,33274.16,4142738,5.78,-28.1
+DE12,DEU,Germany,Karlsruhe,26732.92,30280.31,2832121,9.44,-11.7
+DE13,DEU,Germany,Freiburg,18271.85,19706.47,2304974,7.93,-7.3
+DE14,DEU,Germany,Tübingen,12813.87,14263.66,1887888,6.79,-10.2
+DE21,DEU,Germany,Oberbayern,29483.06,35072.3,4705040,6.27,-15.9
+DE22,DEU,Germany,Niederbayern,9087.34,10257.65,1244102,7.3,-11.4
+DE23,DEU,Germany,Oberpfalz,9356.7,10348.27,1107750,8.45,-9.6
+DE24,DEU,Germany,Oberfranken,6545.89,7356.0,1051868,6.22,-11.0
+DE25,DEU,Germany,Mittelfranken,9167.02,10682.79,1782419,5.14,-14.2
+DE26,DEU,Germany,Unterfranken,9234.31,10499.52,1310561,7.05,-12.1
+DE27,DEU,Germany,Schwaben,10872.78,12129.75,1903481,5.71,-10.4
+DE30,DEU,Germany,Berlin,11812.37,17065.44,3632853,3.25,-30.8
+DE40,DEU,Germany,Brandenburg,41527.11,57604.38,2545159,16.32,-27.9
+DE50,DEU,Germany,Bremen,5551.26,10842.06,695758,7.98,-48.8
+DE60,DEU,Germany,Hamburg,6528.67,8266.85,1832675,3.56,-21.0
+DE71,DEU,Germany,Darmstadt,19841.93,25706.42,4001146,4.96,-22.8
+DE72,DEU,Germany,Gießen,6686.89,7702.18,1036748,6.45,-13.2
+DE73,DEU,Germany,Kassel,8482.54,9795.94,1199039,7.07,-13.4
+DE80,DEU,Germany,Mecklenburg-Vorpommern,18311.39,22611.71,1576049,11.62,-19.0
+DE91,DEU,Germany,Braunschweig,15476.26,23267.42,1589602,9.74,-33.5
+DE92,DEU,Germany,Hannover,13636.47,16677.39,2117034,6.44,-18.2
+DE93,DEU,Germany,Lüneburg,12642.17,14376.43,1716631,7.36,-12.1
+DE94,DEU,Germany,Weser-Ems,28143.45,35304.77,2559680,10.99,-20.3
+DEA1,DEU,Germany,Düsseldorf,46247.14,91704.07,5222540,8.86,-49.6
+DEA2,DEU,Germany,Köln,39855.65,62167.41,4461422,8.93,-35.9
+DEA3,DEU,Germany,Münster,26285.16,44620.53,2640307,9.96,-41.1
+DEA4,DEU,Germany,Detmold,14212.31,20473.39,2070052,6.87,-30.6
+DEA5,DEU,Germany,Arnsberg,29743.34,52854.71,3570099,8.33,-43.7
+DEB1,DEU,Germany,Koblenz,9265.6,10553.76,1522385,6.09,-12.2
+DEB2,DEU,Germany,Trier,4098.44,4553.11,524876,7.81,-10.0
+DEB3,DEU,Germany,Rheinhessen-Pfalz,18117.11,22851.71,2061294,8.79,-20.7
+DEC0,DEU,Germany,Saarland,14319.89,23666.89,1011891,14.15,-39.5
+DED2,DEU,Germany,Dresden,17779.93,26010.71,1588724,11.19,-31.6
+DED4,DEU,Germany,Chemnitz,12617.01,15773.87,1397272,9.03,-20.0
+DED5,DEU,Germany,Leipzig,12380.33,18103.14,1063971,11.64,-31.6
+DEE0,DEU,Germany,Sachsen-Anhalt,38623.98,49631.34,2150239,17.96,-22.2
+DEF0,DEU,Germany,Schleswig-Holstein,25071.07,33172.74,2939283,8.53,-24.4
+DEG0,DEU,Germany,Thüringen,17215.46,19726.51,2118830,8.12,-12.7
+DK01,DNK,Denmark,Hovedstaden,4485.68,7964.6,1891871,2.37,-43.7
+DK02,DNK,Denmark,Sjælland,6413.21,9963.66,849857,7.55,-35.6
+DK03,DNK,Denmark,Syddanmark,11121.12,13124.19,1237413,8.99,-15.3
+DK04,DNK,Denmark,Midtjylland,10540.34,13153.94,1358879,7.76,-19.9
+DK05,DNK,Denmark,Nordjylland,8673.07,10141.92,594634,14.59,-14.5
+ES11,ESP,Spain and Andorra,Galicia,17014.06,22560.25,2699424,6.3,-24.6
+ES12,ESP,Spain and Andorra,Principado de Asturias,10412.49,19549.2,1006060,10.35,-46.7
+ES13,ESP,Spain and Andorra,Cantabria,3745.45,4349.59,588387,6.37,-13.9
+ES21,ESP,Spain and Andorra,País Vasco,13236.71,15485.4,2216302,5.97,-14.5
+ES22,ESP,Spain and Andorra,Comunidad Foral de Navarra,5770.69,6084.31,672155,8.59,-5.2
+ES23,ESP,Spain and Andorra,La Rioja,2204.19,2237.92,322282,6.84,-1.5
+ES24,ESP,Spain and Andorra,Aragón,14258.98,18074.7,1341289,10.63,-21.1
+ES30,ESP,Spain and Andorra,Comunidad de Madrid,14344.1,15980.48,6871903,2.09,-10.2
+ES41,ESP,Spain and Andorra,Castilla y León,27204.3,36696.92,2383703,11.41,-25.9
+ES42,ESP,Spain and Andorra,Castilla-La Mancha,22859.37,28180.88,2084086,10.97,-18.9
+ES43,ESP,Spain and Andorra,Extremadura,8180.08,8351.09,1054306,7.76,-2.0
+ES51,ESP,Spain and Andorra,Cataluña,36901.63,37544.78,7901963,4.67,-1.7
+ES52,ESP,Spain and Andorra,Comunitat Valenciana,22141.33,25147.26,5216195,4.24,-12.0
+ES53,ESP,Spain and Andorra,Illes Balears,6096.25,7696.5,1209906,5.04,-20.8
+ES61,ESP,Spain and Andorra,Andalucía,47279.54,60024.55,8584147,5.51,-21.2
+ES62,ESP,Spain and Andorra,Región de Murcia,11819.67,12495.41,1551692,7.62,-5.4
+ES63,ESP,Spain and Andorra,Ciudad de Ceuta,184.78,254.1,83052,2.22,-27.3
+ES64,ESP,Spain and Andorra,Ciudad de Melilla,120.11,162.02,85493,1.4,-25.9
+ES70,ESP,Spain and Andorra,Canarias,10090.12,12293.85,2213016,4.56,-17.9
+EE00,EST,Estonia,Eesti,14336.05,26585.05,1365884,10.5,-46.1
+FI19,FIN,Finland,Länsi-Suomi,11599.5,18139.01,1384761,8.38,-36.1
+FI1B,FIN,Finland,Helsinki-Uusimaa,9704.65,18219.12,1733033,5.6,-46.7
+FI1C,FIN,Finland,Etelä-Suomi,10691.12,16693.55,1144473,9.34,-36.0
+FI1D,FIN,Finland,Pohjois- ja Itä-Suomi,10950.16,14184.9,1271344,8.61,-22.8
+FI20,FIN,Finland,Aland,66.78,86.48,30359,2.2,-22.8
+FR10,FRA,France and Monaco,Ile-de-France,29481.48,42335.84,12407359,2.38,-30.4
+FRB0,FRA,France and Monaco,Centre — Val de Loire,18191.6,21786.79,2581716,7.05,-16.5
+FRC1,FRA,France and Monaco,Bourgogne,11481.43,14480.03,1619967,7.09,-20.7
+FRC2,FRA,France and Monaco,Franche-Comté,6735.45,8056.08,1180267,5.71,-16.4
+FRD1,FRA,France and Monaco,Basse-Normandie,10028.36,11925.57,1477731,6.79,-15.9
+FRD2,FRA,France and Monaco,Haute-Normandie,14673.08,25194.04,1861791,7.88,-41.8
+FRE1,FRA,France and Monaco,Nord-Pas de Calais,31770.07,41029.55,4073012,7.8,-22.6
+FRE2,FRA,France and Monaco,Picardie,15222.5,18467.01,1917280,7.94,-17.6
+FRF1,FRA,France and Monaco,Alsace,10007.39,13110.66,1927888,5.19,-23.7
+FRF2,FRA,France and Monaco,Champagne-Ardenne,13261.01,15529.33,1308276,10.14,-14.6
+FRF3,FRA,France and Monaco,Lorraine,23008.04,32717.48,2318308,9.92,-29.7
+FRG0,FRA,France and Monaco,Pays de la Loire,27880.32,35751.79,3898424,7.15,-22.0
+FRH0,FRA,France and Monaco,Bretagne,31011.09,36335.65,3440248,9.01,-14.7
+FRI1,FRA,France and Monaco,Aquitaine,17766.57,21936.42,3575256,4.97,-19.0
+FRI2,FRA,France and Monaco,Limousin,5549.28,6597.99,726934,7.63,-15.9
+FRI3,FRA,France and Monaco,Poitou-Charentes,13720.55,16420.14,1836624,7.47,-16.4
+FRJ1,FRA,France and Monaco,Languedoc-Roussillon,14019.85,16229.81,2948904,4.75,-13.6
+FRJ2,FRA,France and Monaco,Midi-Pyrénées,17360.1,20490.25,3172349,5.47,-15.3
+FRK1,FRA,France and Monaco,Auvergne,10066.01,12035.45,1370396,7.35,-16.4
+FRK2,FRA,France and Monaco,Rhône-Alpes,30379.41,37433.16,6826040,4.45,-18.8
+FRL0,FRA,France and Monaco,Provence-Alpes-Côte d’Azur,25196.71,34280.87,5194349,4.85,-26.5
+FRM0,FRA,France and Monaco,Corse,1973.35,2084.27,354266,5.57,-5.3
+EL30,GRC,Greece,Attiki,13536.05,14462.99,3795536,3.57,-6.4
+EL41,GRC,Greece,Voreio Aigaio,775.28,812.52,194784,3.98,-4.6
+EL42,GRC,Greece,Notio Aigaio,1857.05,1664.02,326841,5.68,11.6
+EL43,GRC,Greece,Kriti,4302.42,4710.44,622624,6.91,-8.7
+EL51,GRC,Greece,"Anatoliki Makedonia, Thraki",3761.59,3822.86,558835,6.73,-1.6
+EL52,GRC,Greece,Kentriki Makedonia,9214.71,9975.81,1782592,5.17,-7.6
+EL53,GRC,Greece,Dytiki Makedonia,6728.41,28593.5,250279,26.88,-76.5
+EL54,GRC,Greece,Ipeiros,1760.78,1774.51,318505,5.53,-0.8
+EL61,GRC,Greece,Thessalia,4510.82,4852.72,681190,6.62,-7.0
+EL62,GRC,Greece,Ionia Nisia,811.73,826.54,202269,4.01,-1.8
+EL63,GRC,Greece,Dytiki Elláda,3060.08,3372.57,642721,4.76,-9.3
+EL64,GRC,Greece,Sterea Elláda,8777.4,8378.78,503941,17.42,4.8
+EL65,GRC,Greece,Peloponnisos,7529.6,10902.87,533865,14.1,-30.9
+HR02,HRV,Croatia,Panonska Hrvatska,8844.41,8699.49,999106,8.85,1.7
+HR03,HRV,Croatia,Jadranska Hrvatska,9425.36,9941.86,1297987,7.26,-5.2
+HR05,HRV,Croatia,Grad Zagreb,2223.75,2326.5,768624,2.89,-4.4
+HR06,HRV,Croatia,Sjeverna Hrvatska,4335.57,4065.37,785177,5.52,6.6
+HU11,HUN,Hungary,Budapest,5829.91,6121.28,1671004,3.49,-4.8
+HU12,HUN,Hungary,Pest,7846.97,7055.27,1328790,5.91,11.2
+HU21,HUN,Hungary,Közép-Dunántúl,9486.21,9920.86,1059399,8.95,-4.4
+HU22,HUN,Hungary,Nyugat-Dunántúl,6616.75,5809.46,982924,6.73,13.9
+HU23,HUN,Hungary,Dél-Dunántúl,6815.45,5761.77,858675,7.94,18.3
+HU31,HUN,Hungary,Észak-Magyarország,8332.87,11577.11,1093790,7.62,-28.0
+HU32,HUN,Hungary,Észak-Alföld,8588.66,7685.05,1405012,6.11,11.8
+HU33,HUN,Hungary,Dél-Alföld,7394.46,6604.8,1200150,6.16,12.0
+IE04,IRL,Ireland,Northern and Western,12631.47,12685.28,930208,13.58,-0.4
+IE05,IRL,Ireland,Southern,26557.54,30464.91,1741180,15.25,-12.8
+IE06,IRL,Ireland,Eastern and Midland,18354.91,19460.13,2600007,7.06,-5.7
+ITC1,ITA,"Italy, San Marino and the Holy See",Piemonte,29536.17,32527.27,4251351,6.95,-9.2
+ITC2,ITA,"Italy, San Marino and the Holy See",Valle d’Aosta/Vallée d’Aoste,953.07,1059.3,123130,7.74,-10.0
+ITC3,ITA,"Italy, San Marino and the Holy See",Liguria,6630.08,15928.15,1507636,4.4,-58.4
+ITC4,ITA,"Italy, San Marino and the Holy See",Lombardia,59386.5,64263.69,9976509,5.95,-7.6
+ITF1,ITA,"Italy, San Marino and the Holy See",Abruzzo,8758.85,9498.24,1272627,6.88,-7.8
+ITF2,ITA,"Italy, San Marino and the Holy See",Molise,3139.49,3502.39,290636,10.8,-10.4
+ITF3,ITA,"Italy, San Marino and the Holy See",Campania,16184.21,17910.44,5609536,2.89,-9.6
+ITF4,ITA,"Italy, San Marino and the Holy See",Puglia,26446.52,37787.5,3907683,6.77,-30.0
+ITF5,ITA,"Italy, San Marino and the Holy See",Basilicata,5119.29,5952.73,537577,9.52,-14.0
+ITF6,ITA,"Italy, San Marino and the Holy See",Calabria,10548.98,11649.98,1846610,5.71,-9.5
+ITG1,ITA,"Italy, San Marino and the Holy See",Sicilia,25726.07,29065.61,4814016,5.34,-11.5
+ITG2,ITA,"Italy, San Marino and the Holy See",Sardegna,19097.85,22530.07,1578146,12.1,-15.2
+ITH1,ITA,"Italy, San Marino and the Holy See",Provincia Autonoma di Bolzano/Bozen,2905.25,3117.83,534147,5.44,-6.8
+ITH2,ITA,"Italy, San Marino and the Holy See",Provincia Autonoma di Trento,3644.47,3610.04,542996,6.71,1.0
+ITH3,ITA,"Italy, San Marino and the Holy See",Veneto,34655.71,43938.33,4849553,7.15,-21.1
+ITH4,ITA,"Italy, San Marino and the Holy See",Friuli-Venezia Giulia,11234.21,12121.03,1194248,9.41,-7.3
+ITH5,ITA,"Italy, San Marino and the Holy See",Emilia-Romagna,33862.16,37624.43,4437578,7.63,-10.0
+ITI1,ITA,"Italy, San Marino and the Holy See",Toscana,18424.78,20752.59,3661981,5.03,-11.2
+ITI2,ITA,"Italy, San Marino and the Holy See",Umbria,6314.63,7833.85,856407,7.37,-19.4
+ITI3,ITA,"Italy, San Marino and the Holy See",Marche,7241.58,7630.22,1484298,4.88,-5.1
+ITI4,ITA,"Italy, San Marino and the Holy See",Lazio,39571.11,48356.24,5720536,6.92,-18.2
+LT01,LTU,Lithuania,Sostinės regionas,3625.96,4479.62,848724,4.27,-19.1
+LT02,LTU,Lithuania,Vidurio ir vakarų Lietuvos regionas,17041.88,17919.21,2008555,8.48,-4.9
+LU00,LUX,Luxembourg,Luxembourg,7859.97,11267.93,660809,11.89,-30.2
+LV00,LVA,Latvia,Latvija,10946.94,11806.47,1883008,5.81,-7.3
+MT00,MLT,Malta,Malta,1971.5,2697.44,542051,3.64,-26.9
+NL11,NLD,Netherlands,Groningen,19094.74,20504.25,596075,32.03,-6.9
+NL12,NLD,Netherlands,Friesland (NL),5520.66,6818.9,659551,8.37,-19.0
+NL13,NLD,Netherlands,Drenthe,4374.35,5403.21,502051,8.71,-19.0
+NL21,NLD,Netherlands,Overijssel,6991.28,8593.74,1184333,5.9,-18.6
+NL22,NLD,Netherlands,Gelderland,11280.84,17306.89,2133708,5.29,-34.8
+NL23,NLD,Netherlands,Flevoland,4171.82,5281.06,444701,9.38,-21.0
+NL32,NLD,Netherlands,Noord-Holland,18782.69,26694.69,2952622,6.36,-29.6
+NL34,NLD,Netherlands,Zeeland,8537.61,12181.51,391124,21.83,-29.9
+NL41,NLD,Netherlands,Noord-Brabant,17799.15,27148.13,2626210,6.78,-34.4
+NL42,NLD,Netherlands,Limburg (NL),13361.69,17372.78,1128367,11.84,-23.1
+PL21,POL,Poland,Małopolskie,18020.95,23437.2,3319305,5.43,-23.1
+PL22,POL,Poland,Śląskie,52740.84,67768.69,4245283,12.42,-22.2
+PL41,POL,Poland,Wielkopolskie,26966.11,34463.28,3444228,7.83,-21.8
+PL42,POL,Poland,Zachodniopomorskie,17224.78,21304.73,1589049,10.84,-19.2
+PL43,POL,Poland,Lubuskie,8731.79,9398.37,952793,9.16,-7.1
+PL51,POL,Poland,Dolnośląskie,27309.74,27135.63,2813919,9.71,0.6
+PL52,POL,Poland,Opolskie,23244.25,21102.33,896370,25.93,10.2
+PL61,POL,Poland,Kujawsko-pomorskie,21086.37,18673.15,1943197,10.85,12.9
+PL62,POL,Poland,Warmińsko-mazurskie,8126.0,7455.57,1303380,6.23,9.0
+PL63,POL,Poland,Pomorskie,12992.6,12985.94,2295745,5.66,0.1
+PL71,POL,Poland,Łódzkie,36625.54,44213.98,2343021,15.63,-17.2
+PL72,POL,Poland,Świętokrzyskie,18206.1,18567.5,1133097,16.07,-1.9
+PL81,POL,Poland,Lubelskie,20293.75,21657.92,1948400,10.42,-6.3
+PL82,POL,Poland,Podkarpackie,11845.14,13399.48,1962332,6.04,-11.6
+PL84,POL,Poland,Podlaskie,7726.88,7105.66,1083854,7.13,8.7
+PL91,POL,Poland,Warszawski stołeczny,11508.83,15343.19,3269510,3.52,-25.0
+PL92,POL,Poland,Mazowiecki regionalny,40144.97,37613.84,2210253,18.16,6.7
+PT11,PRT,Portugal,Norte,12052.7,12084.98,3640294,3.31,-0.3
+PT15,PRT,Portugal,Algarve,2160.4,1957.22,478618,4.51,10.4
+PT19,PRT,Portugal,Centro (PT),11781.5,10928.38,1672267,7.05,7.8
+PT1A,PRT,Portugal,"Grande Lisboa
+",5039.85,5321.14,2097742,2.4,-5.3
+PT1B,PRT,Portugal,"Península de Setúbal
+",3449.67,3940.86,823822,4.19,-12.5
+PT1C,PRT,Portugal,Alentejo,7467.83,15238.3,472735,15.8,-51.0
+PT1D,PRT,Portugal,"Oeste e Vale do Tejo
+",8332.81,10412.83,836948,9.96,-20.0
+PT20,PRT,Portugal,Região Autónoma dos Açores,1213.99,1216.25,240125,5.06,-0.2
+PT30,PRT,Portugal,Região Autónoma da Madeira,819.97,786.31,254070,3.23,4.3
+RO11,ROU,Romania,Nord-Vest,11439.69,9694.6,2531913,4.52,18.0
+RO12,ROU,Romania,Centru,12942.31,13148.83,2280856,5.67,-1.6
+RO21,ROU,Romania,Nord-Est,12606.59,11749.18,3224213,3.91,7.3
+RO22,ROU,Romania,Sud-Est,14353.05,14072.68,2353162,6.1,2.0
+RO31,ROU,Romania,Sud-Muntenia,18452.96,20296.78,2841139,6.49,-9.1
+RO32,ROU,Romania,Bucureşti-Ilfov,6184.49,6117.62,2290125,2.7,1.1
+RO41,ROU,Romania,Sud-Vest Oltenia,17737.07,21512.65,1861680,9.53,-17.6
+RO42,ROU,Romania,Vest,11392.34,14235.77,1671460,6.82,-20.0
+SK01,SVK,Slovakia,Bratislavský kraj,5608.01,6240.91,728370,7.7,-10.1
+SK02,SVK,Slovakia,Západné Slovensko,15551.29,15622.1,1806944,8.61,-0.5
+SK03,SVK,Slovakia,Stredné Slovensko,6954.63,6814.33,1305883,5.33,2.1
+SK04,SVK,Slovakia,Východné Slovensko,16661.68,17514.31,1587595,10.49,-4.9
+SI03,SVN,Slovenia,Vzhodna Slovenija,10483.03,14028.67,1107885,9.46,-25.3
+SI04,SVN,Slovenia,Zahodna Slovenija,5508.11,6197.33,1009087,5.46,-11.1
+SE11,SWE,Sweden,Stockholm,3708.46,6060.31,2440027,1.52,-38.8
+SE12,SWE,Sweden,Östra Mellansverige,9643.61,12790.07,1763645,5.47,-24.6
+SE21,SWE,Sweden,Småland med öarna,5779.44,6778.67,882332,6.55,-14.7
+SE22,SWE,Sweden,Sydsverige,6404.1,7380.04,1573064,4.07,-13.2
+SE23,SWE,Sweden,Västsverige,10453.85,9881.59,2101461,4.97,5.8
+SE31,SWE,Sweden,Norra Mellansverige,4586.53,5403.03,859620,5.34,-15.1
+SE32,SWE,Sweden,Mellersta Norrland,2663.54,3109.54,375935,7.09,-14.3
+SE33,SWE,Sweden,Övre Norrland,5240.1,6371.94,525472,9.97,-17.8
