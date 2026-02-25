@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bivariate Map — GHG Emissions &amp; Climate Transition in the EU</title>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -21,6 +21,14 @@
     <div class="main-area">
       <aside class="sidebar">
         <div id="legend"></div>
+        <div class="how-to-read">
+          <span class="how-title">How to read this map</span>
+          <p>Each region is colored by <strong>two variables at once</strong>.</p>
+          <p><span class="hl-teal">&block;</span> Teal &rarr; low emissions &amp; declining</p>
+          <p><span class="hl-accent">&block;</span> Magenta &rarr; high emissions &amp; rising</p>
+          <p><span class="hl-muted">&block;</span> Muted tones &rarr; mixed signals</p>
+          <p>Hover any region or legend cell to explore.</p>
+        </div>
         <p id="insight" class="insight"></p>
       </aside>
       <div class="map-wrapper">
@@ -41,7 +49,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
-  <script type="module" src="js/main.js?v=6"></script>
+  <script type="module" src="js/main.js?v=7"></script>
 
 </body>
 </html>

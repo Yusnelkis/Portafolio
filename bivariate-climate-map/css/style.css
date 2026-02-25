@@ -92,6 +92,27 @@ header .subtitle {
   letter-spacing: 0.02em;
 }
 
+/* --- How to read — interpretive guide --- */
+.how-to-read {
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.how-title {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+.how-to-read .hl-teal { color: var(--teal); }
+.how-to-read .hl-accent { color: var(--accent); }
+.how-to-read .hl-muted { color: #8e7e96; }
+.how-to-read p { margin: 0.1rem 0; }
+.how-to-read strong { color: var(--text); }
+
 /* --- Insight — narrative tension from data --- */
 .insight {
   font-size: 0.72rem;
