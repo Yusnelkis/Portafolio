@@ -97,6 +97,7 @@ header .subtitle {
   font-size: 0.68rem;
   line-height: 1.5;
   color: var(--muted);
+  flex-shrink: 0;
 }
 .how-title {
   display: block;
