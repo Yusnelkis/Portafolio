@@ -180,8 +180,8 @@ async function init() {
 
   // --- Legend ---
   drawLegend("#legend", {
-    labelA: "Higher GHG per capita",
-    labelB: "Emissions increasing",
+    labelA: "GHG per capita (t)",
+    labelB: "Emission change (%)",
     onCellHover(classA, classB) {
       svg.selectAll(".region")
         .transition().duration(150)
