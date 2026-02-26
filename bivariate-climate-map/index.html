@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bivariate Map — GHG Emissions &amp; Climate Transition in the EU</title>
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -23,11 +23,16 @@
         <div id="legend"></div>
         <div class="how-to-read">
           <span class="how-title">How to read this map</span>
-          <p>Each region is colored by <strong>two variables at once</strong>.</p>
-          <p><span class="hl-teal">&block;</span> Teal &rarr; low emissions &amp; declining</p>
-          <p><span class="hl-accent">&block;</span> Magenta &rarr; high emissions &amp; rising</p>
-          <p><span class="hl-muted">&block;</span> Muted tones &rarr; mixed signals</p>
-          <p>Hover any region or legend cell to explore.</p>
+          <p>Each region&rsquo;s color tells you <strong>two things</strong>:</p>
+          <p class="how-dimension"><strong>The color</strong> &mdash; are emissions going up or down?</p>
+          <p><span class="hl-teal">&block;</span> Teal &rarr; emissions are <strong>falling</strong></p>
+          <p><span class="hl-accent">&block;</span> Magenta &rarr; emissions are <strong>rising</strong></p>
+          <p><span class="hl-muted">&block;</span> Mauve &rarr; <strong>little change</strong></p>
+          <p class="how-dimension"><strong>The shade</strong> &mdash; how much does it emit today?</p>
+          <p>Lighter = low emissions per person</p>
+          <p>Darker = high emissions per person</p>
+          <p class="how-example">Example: <span class="hl-teal-dark">dark teal</span> = a big emitter, but improving.</p>
+          <p class="how-hover">Hover any region for exact figures.</p>
         </div>
         <p id="insight" class="insight"></p>
       </aside>
@@ -50,7 +55,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
-  <script type="module" src="js/main.js?v=8"></script>
+  <script type="module" src="js/main.js?v=21"></script>
 
 </body>
 </html>

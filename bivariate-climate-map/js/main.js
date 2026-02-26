@@ -12,9 +12,9 @@
  * - Eurostat/GISCO Nuts2json (NUTS 2021 geometries)
  */
 
-import { bivariateClassify } from "./bivariate.js";
-import { drawLegend } from "./legend.js";
-import { initTooltip, showTooltip, hideTooltip } from "./tooltip.js";
+import { bivariateClassify } from "./bivariate.js?v=10";
+import { drawLegend } from "./legend.js?v=10";
+import { initTooltip, showTooltip, hideTooltip } from "./tooltip.js?v=10";
 
 const TOPO_URL = "https://raw.githubusercontent.com/eurostat/Nuts2json/master/pub/v2/2021/4326/20M/2.json";
 const DATA_URL = "data/bivariate_data.csv";
@@ -149,16 +149,19 @@ async function init() {
   const annoDefs = [
     { record: maxIncrease, type: "increase",
       fmt: r => `${r.name}: +${r[VAR_B].toFixed(0)}%`,
-      ox: 60, oy: 15 },
+      why: "Transport & tourism rebound",
+      ox: 65, oy: -25 },
     { record: maxReduction, type: "reduction",
       fmt: r => `${r.name}: ${r[VAR_B].toFixed(0)}%`,
-      ox: 60, oy: 55 },
+      why: "Lignite plant shutdowns",
+      ox: 55, oy: 75 },
     { record: maxPerCapita, type: "percapita",
       fmt: r => `${r.name}: ${r[VAR_A].toFixed(0)} t/cap`,
+      why: "Europe\u2019s largest gas field",
       ox: -120, oy: -70 }
   ];
 
-  annoDefs.forEach(({ record, type, fmt, ox, oy }) => {
+  annoDefs.forEach(({ record, type, fmt, why, ox, oy }) => {
     const feat = geojson.features.find(f => f.properties.id === record[REQUIRED_ID]);
     if (!feat) return;
     const [cx, cy] = path.centroid(feat);
@@ -176,6 +179,11 @@ async function init() {
       .attr("class", `annotation annotation-${type}`)
       .attr("x", labelX + 4).attr("y", labelY + 4)
       .text(fmt(record));
+
+    annoGroup.append("text")
+      .attr("class", `annotation-why annotation-why-${type}`)
+      .attr("x", labelX + 4).attr("y", labelY + 16)
+      .text(why);
   });
 
   // --- Legend ---

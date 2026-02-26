@@ -1,8 +1,8 @@
 /**
  * legend.js — Leyenda bivariada matricial 3x3
  *
- * Estilo Joshua Stevens: celdas grandes, flechas de eje,
- * etiquetas cortas. Hover sobre celda resalta regiones.
+ * Celdas con flechas de eje + etiquetas descriptivas en esquinas
+ * para guiar la lectura sin ambigüedad.
  */
 
 import { BIVARIATE_COLORS, N } from "./bivariate.js";
@@ -17,7 +17,7 @@ const GAP = 1.5;
  */
 function drawLegend(selector, { labelA, labelB, onCellHover, onCellLeave } = {}) {
   const size = N * (CELL + GAP) - GAP;
-  const margin = { top: 6, right: 6, bottom: 40, left: 24 };
+  const margin = { top: 20, right: 6, bottom: 60, left: 28 };
   const w = size + margin.left + margin.right;
   const h = size + margin.top + margin.bottom;
 
@@ -47,43 +47,34 @@ function drawLegend(selector, { labelA, labelB, onCellHover, onCellLeave } = {})
     }
   }
 
-  // --- Flechas de eje ---
-  const arrowLen = size + 6;
-
-  // Eje X (horizontal)
-  g.append("line")
-    .attr("x1", 0).attr("y1", size + 8)
-    .attr("x2", arrowLen).attr("y2", size + 8)
-    .attr("stroke", "#9a958c").attr("stroke-width", 1);
-  g.append("polygon")
-    .attr("points", `${arrowLen},${size + 5} ${arrowLen},${size + 11} ${arrowLen + 5},${size + 8}`)
-    .attr("fill", "#9a958c");
-
-  // Eje Y (vertical)
-  g.append("line")
-    .attr("x1", -8).attr("y1", size)
-    .attr("x2", -8).attr("y2", -6)
-    .attr("stroke", "#9a958c").attr("stroke-width", 1);
-  g.append("polygon")
-    .attr("points", `${-11},${-6} ${-5},${-6} ${-8},${-11}`)
-    .attr("fill", "#9a958c");
-
-  // --- Etiquetas de eje ---
+  // --- Axis labels with arrows (→ and ↑) inline ---
   g.append("text")
-    .attr("x", size / 2).attr("y", size + 20)
+    .attr("x", size / 2).attr("y", size + 16)
     .attr("text-anchor", "middle")
     .attr("class", "legend-label")
-    .text(labelA || "Variable A");
+    .text((labelA || "Variable A") + " \u2192");
 
   g.append("text")
-    .attr("x", -(size / 2)).attr("y", -16)
+    .attr("x", -(size / 2)).attr("y", -14)
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
     .attr("class", "legend-label")
-    .text(labelB || "Variable B");
+    .text("\u2191 " + (labelB || "Variable B"));
+
+  // --- Diagonal corner labels: the two extremes ---
+  g.append("text")
+    .attr("x", -2).attr("y", size + 28)
+    .attr("class", "legend-corner")
+    .text("Low, falling");
+
+  g.append("text")
+    .attr("x", size + 2).attr("y", -8)
+    .attr("text-anchor", "end")
+    .attr("class", "legend-corner")
+    .text("High, rising");
 
   // --- No data indicator ---
-  const ndY = size + 28;
+  const ndY = size + 40;
   g.append("rect")
     .attr("x", 0).attr("y", ndY)
     .attr("width", 12).attr("height", 12)

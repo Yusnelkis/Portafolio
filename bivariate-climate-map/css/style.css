@@ -85,6 +85,13 @@ header .subtitle {
   text-transform: uppercase;
 }
 
+.legend-corner {
+  font-size: 8px;
+  font-weight: 400;
+  fill: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 .legend-nodata {
   font-size: 9px;
   font-weight: 600;
@@ -111,7 +118,11 @@ header .subtitle {
 .how-to-read .hl-teal { color: var(--teal); }
 .how-to-read .hl-accent { color: var(--accent); }
 .how-to-read .hl-muted { color: #8e7e96; }
+.how-to-read .hl-teal-dark { color: #1b6e62; font-weight: 600; }
 .how-to-read p { margin: 0.1rem 0; }
+.how-to-read .how-dimension { margin-top: 0.35rem; color: var(--text); font-size: 0.65rem; }
+.how-to-read .how-example { margin-top: 0.3rem; font-style: italic; }
+.how-to-read .how-hover { margin-top: 0.15rem; }
 .how-to-read strong { color: var(--text); }
 
 /* --- Insight — narrative tension from data --- */
@@ -184,6 +195,14 @@ header .subtitle {
 .annotation-increase { fill: var(--accent); }
 .annotation-reduction { fill: var(--teal); }
 .annotation-percapita { fill: #5a554c; }
+
+.annotation-why {
+  font-size: 0.58rem;
+  font-weight: 400;
+  font-style: italic;
+  fill: var(--muted);
+  pointer-events: none;
+}
 
 .annotation-line { stroke-width: 0.8; stroke-dasharray: 3 2; }
 .annotation-line-increase { stroke: var(--accent); }

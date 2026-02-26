@@ -8,16 +8,16 @@
  * Variable B (eje Y): % cambio emisiones 2013→2023
  */
 
-// --- Paleta bivariada 3×3: Teal × Magenta (NYC bikeshare-inspired) ---
+// --- Paleta bivariada 3×3: Teal × Magenta ---
 // Teal = emissions reducing (cool/positive). Magenta = emissions increasing (warm/alert).
 // Lighter tints = low per capita. Deeper saturation = high per capita.
-// Cross-mix produces lavender/mauve in the center — readable on warm gray bg.
-// Ref: NYC subway/bikeshare heatmap palette (teal → cream → coral → magenta).
+// Centro = púrpura saturado (mezcla genuina teal+magenta), no gris neutro.
+// Ref: Joshua Stevens bivariate logic — centro debe leerse como "ambos ejes mezclados".
 // Matrix[row][col]: row = quantile B (change), col = quantile A (per capita)
 const BIVARIATE_COLORS = [
   // B low (strong reduction) — teal light → teal deep
   ["#73d2c0", "#3a9e8f", "#1b6e62"],
-  // B mid — lavender/mauve neutral blend
+  // B mid — lavender-gray neutral zone (LAB alt: ["#c0a9c0", "#9b7486", "#694c5e"])
   ["#c0b5c8", "#8e7e96", "#5e4f66"],
   // B high (increase / little reduction) — rose → magenta → deep berry
   ["#e48aaf", "#c24e80", "#882058"]
